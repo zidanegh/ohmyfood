@@ -1,0 +1,195 @@
+$primaire-color: #9356dc;
+$second-color: #ff79da;
+$third-color: #99e2d0;
+$content-background: #f6f6f6;
+
+@mixin margin($size) {
+  margin: $size;
+}
+
+.body {
+  font-family: "Roboto", sans-serif;
+}
+
+.bar-info__title{
+  font-family: "Shrikhand", cursive;
+  font-weight: 300;
+  color: white;
+  font-size: large;
+}
+.title__card {
+  font-weight: 700;
+  font-size: medium;
+}
+.text__card {
+  font-size: medium;
+  font-weight: 300;
+}
+.title__accueil {
+  font-weight: 700;
+  font-size: x-large;
+}
+.content__accueil {
+  font-weight: 300;
+  font-size: large;
+}
+.text-btn-fonctionnement-form {
+  font-weight: 500;
+  font-size: medium;
+  color: white;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-localisation {
+  &--sizing {
+    display: flex;
+    justify-content: center;
+    padding: 5% 0px 5% 0px;
+    width: 100%;
+  }
+  &__logo {
+    box-shadow: 0px 2px #00000026;
+  }
+  &__img {
+    width: 48%;
+  }
+  &__localisation {
+    background-color: #eaeaea;
+  }
+  &__text {
+    margin-left: 4%;
+    font-weight: 500;
+    font-size: medium;
+  }
+}
+
+.reservation-tuto {
+  background-color: $content-background;
+  padding: 10%;
+
+  &__titre {
+    text-align: center;
+    @include margin(0px 0px 5% 0px);
+  }
+  &__text {
+    text-align: center;
+    @include margin(0px 0px 15% 0px);
+  }
+  &__btn {
+    height: 50px;
+    width: 80%;
+    background: linear-gradient($second-color -11.44%, $primaire-color 123.93%);
+    box-shadow: 0px 0.1rem 10px 0px #00000040;
+    border-radius: 25px;
+    border: none;
+    @include margin(0px 0px 15% 0px);
+  }
+}
+
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include margin(15% 5% 20% 5%);
+  &__border {
+    display: flex;
+    align-items: center;
+    border: 1px solid $content-background;
+    background-color: $content-background;
+    border-radius: 20px;
+    width: 100%;
+    @include margin(5% 0px 0px 0px);
+    height: 3.5em;
+    position: relative;
+    &-content {
+      display: flex;
+      width: 80%;
+      @include margin(0px 0px 0px 10%);
+      font-weight: 500;
+      font-size: medium;
+      & i {
+        color: #7e7e7e;
+        @include margin(0px 15% 0px 0px);
+      }
+      & p {
+        color: black;
+      }
+    }
+
+    &-num {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: -0.7em;
+      border: 1px solid #9356dc;
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+      background-color: #9356dc;
+      color: white;
+    }
+  }
+}
+
+.card-list {
+  padding: 20% 5% 20% 5%;
+  background-color: $content-background;
+  & H1 {
+    @include margin(0px 0px 5% 0px);
+  }
+  &__restaurant {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    box-shadow: 0px 4px 15px 0px #0000001a;
+    border-radius: 15px;
+    width: 100%;
+    height: 10%;
+    @include margin(0px 0px 5% 0px);
+
+    & img {
+      border-radius: 15px 15px 0px 0px;
+      object-fit: cover;
+      width: 100%;
+    }
+    &__text {
+      display: flex;
+      flex-direction: column;
+      height: 3em;
+      padding: 5%;
+      & h3 {
+        @include margin(0px 0px 3% 0px);
+      }
+      & i {
+        font-size: x-large;
+        position: relative;
+        top: -70%;
+        left: 90%;
+      }
+    }
+  }
+}
+
+.bar-info{
+  background-color: black;
+
+
+  &__icone{
+    display: flex;
+    color: white;
+    @include margin (5%);
+    & i{
+      @include margin (0px 5% 0px 0px);
+    }
+  }
+  &__text{
+    @include margin (5%);
+  }
+
+}

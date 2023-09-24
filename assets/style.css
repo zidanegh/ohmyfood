@@ -1,0 +1,186 @@
+.body {
+  font-family: "Roboto", sans-serif;
+}
+
+.bar-info__title {
+  font-family: "Shrikhand", cursive;
+  font-weight: 300;
+  color: white;
+  font-size: large;
+}
+
+.title__card {
+  font-weight: 700;
+  font-size: medium;
+}
+
+.text__card {
+  font-size: medium;
+  font-weight: 300;
+}
+
+.title__accueil {
+  font-weight: 700;
+  font-size: x-large;
+}
+
+.content__accueil {
+  font-weight: 300;
+  font-size: large;
+}
+
+.text-btn-fonctionnement-form {
+  font-weight: 500;
+  font-size: medium;
+  color: white;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-localisation--sizing {
+  display: flex;
+  justify-content: center;
+  padding: 5% 0px 5% 0px;
+  width: 100%;
+}
+.logo-localisation__logo {
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.1490196078);
+}
+.logo-localisation__img {
+  width: 48%;
+}
+.logo-localisation__localisation {
+  background-color: #eaeaea;
+}
+.logo-localisation__text {
+  margin-left: 4%;
+  font-weight: 500;
+  font-size: medium;
+}
+
+.reservation-tuto {
+  background-color: #f6f6f6;
+  padding: 10%;
+}
+.reservation-tuto__titre {
+  text-align: center;
+  margin: 0px 0px 5% 0px;
+}
+.reservation-tuto__text {
+  text-align: center;
+  margin: 0px 0px 15% 0px;
+}
+.reservation-tuto__btn {
+  height: 50px;
+  width: 80%;
+  background: linear-gradient(#ff79da -11.44%, #9356dc 123.93%);
+  box-shadow: 0px 0.1rem 10px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 25px;
+  border: none;
+  margin: 0px 0px 15% 0px;
+}
+
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15% 5% 20% 5%;
+}
+.fonctionnement__border {
+  display: flex;
+  align-items: center;
+  border: 1px solid #f6f6f6;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  width: 100%;
+  margin: 5% 0px 0px 0px;
+  height: 3.5em;
+  position: relative;
+}
+.fonctionnement__border-content {
+  display: flex;
+  width: 80%;
+  margin: 0px 0px 0px 10%;
+  font-weight: 500;
+  font-size: medium;
+}
+.fonctionnement__border-content i {
+  color: #7e7e7e;
+  margin: 0px 15% 0px 0px;
+}
+.fonctionnement__border-content p {
+  color: black;
+}
+.fonctionnement__border-num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -0.7em;
+  border: 1px solid #9356dc;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  background-color: #9356dc;
+  color: white;
+}
+
+.card-list {
+  padding: 20% 5% 20% 5%;
+  background-color: #f6f6f6;
+}
+.card-list H1 {
+  margin: 0px 0px 5% 0px;
+}
+.card-list__restaurant {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
+  border-radius: 15px;
+  width: 100%;
+  height: 10%;
+  margin: 0px 0px 5% 0px;
+}
+.card-list__restaurant img {
+  border-radius: 15px 15px 0px 0px;
+  object-fit: cover;
+  width: 100%;
+}
+.card-list__restaurant__text {
+  display: flex;
+  flex-direction: column;
+  height: 3em;
+  padding: 5%;
+}
+.card-list__restaurant__text h3 {
+  margin: 0px 0px 3% 0px;
+}
+.card-list__restaurant__text i {
+  font-size: x-large;
+  position: relative;
+  top: -70%;
+  left: 90%;
+}
+
+.bar-info {
+  background-color: black;
+}
+.bar-info__icone {
+  display: flex;
+  color: white;
+  margin: 5%;
+}
+.bar-info__icone i {
+  margin: 0px 5% 0px 0px;
+}
+.bar-info__text {
+  margin: 5%;
+}
+
+/*# sourceMappingURL=style.css.map */
