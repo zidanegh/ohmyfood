@@ -44,6 +44,10 @@ $content-background: #f6f6f6;
   align-items: center;
   justify-content: center;
 }
+.link-decor{
+  text-decoration: none;
+  color: inherit;
+}
 
 .logo-localisation {
   &--sizing {
@@ -146,17 +150,17 @@ $content-background: #f6f6f6;
   &__restaurant {
     display: flex;
     flex-direction: column;
-    border: 1px solid white;
     box-shadow: 0px 4px 15px 0px #0000001a;
     border-radius: 15px;
-    width: 100%;
-    height: 10%;
     @include margin(0px 0px 5% 0px);
-
+    &__content{
+      height: auto;
+    }
     & img {
       border-radius: 15px 15px 0px 0px;
       object-fit: cover;
       width: 100%;
+      height: 25vh;
     }
     &__text {
       display: flex;
@@ -178,7 +182,7 @@ $content-background: #f6f6f6;
 
 .bar-info{
   background-color: black;
-
+  height: 100%;
 
   &__icone{
     display: flex;
