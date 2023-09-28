@@ -1,0 +1,18 @@
+@use '../utils' as u;
+
+.bar-info {
+  background-color: black;
+  height: 100%;
+
+  &__icone {
+    display: flex;
+    color: white;
+    @include u.margin(5%);
+    & i {
+      @include u.margin(0px 5% 0px 0px);
+    }
+  }
+  &__text {
+    @include u.margin(5%);
+  }
+}

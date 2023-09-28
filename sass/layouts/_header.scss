@@ -1,0 +1,22 @@
+.logo-localisation {
+  &--sizing {
+    display: flex;
+    justify-content: center;
+    padding: 5% 0px 5% 0px;
+    width: 100%;
+  }
+  &__logo {
+    box-shadow: 0px 2px #00000026;
+  }
+  &__img {
+    width: 48%;
+  }
+  &__localisation {
+    background-color: #eaeaea;
+  }
+  &__text {
+    margin-left: 4%;
+    font-weight: 500;
+    font-size: medium;
+  }
+}

@@ -35,16 +35,20 @@
   color: white;
 }
 
-.flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.bar-info {
+  background-color: black;
+  height: 100%;
 }
-
-.link-decor {
-  text-decoration: none;
-  color: inherit;
+.bar-info__icone {
+  display: flex;
+  color: white;
+  margin: 5%;
+}
+.bar-info__icone i {
+  margin: 0px 5% 0px 0px;
+}
+.bar-info__text {
+  margin: 5%;
 }
 
 .logo-localisation--sizing {
@@ -66,6 +70,11 @@
   margin-left: 4%;
   font-weight: 500;
   font-size: medium;
+}
+
+.link-decor {
+  text-decoration: none;
+  color: inherit;
 }
 
 .reservation-tuto {
@@ -172,22 +181,6 @@
   position: relative;
   top: -70%;
   left: 90%;
-}
-
-.bar-info {
-  background-color: black;
-  height: 100%;
-}
-.bar-info__icone {
-  display: flex;
-  color: white;
-  margin: 5%;
-}
-.bar-info__icone i {
-  margin: 0px 5% 0px 0px;
-}
-.bar-info__text {
-  margin: 5%;
 }
 
 /*# sourceMappingURL=style.css.map */

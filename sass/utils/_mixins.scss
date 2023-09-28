@@ -1,0 +1,16 @@
+@mixin margin ($size) {
+  margin: $size;
+}
+
+@mixin display-flex-general ($change) {
+display: flex;
+flex-direction: $change;
+justify-content: $change;
+align-items: $change;
+}
+
+@mixin display-justify ($change) {
+display: $change;
+justify-content: $change;
+}
+
