@@ -1,0 +1,23 @@
+@use '../utils' as u;
+
+
+.card-list__restaurant__icone {
+  position: relative;
+  top: -70%;
+  left: 90%;
+  width: 23px; 
+  height: 21px ;
+  overflow: visible;
+  fill: none;
+ stroke: black;
+}
+
+.bar-info__icone i{
+font-size: small;
+}
+.fa-handshake-angle{
+  @include u.margin(0 2% 0 0);
+}
+.fa-utensils{
+  @include u.margin(0 3% 0 0);
+}

@@ -35,20 +35,53 @@
   color: white;
 }
 
+.reservation-tuto__btn {
+  height: 50px;
+  width: 80%;
+  background: linear-gradient(#ff79da -11.44%, #9356dc 123.93%);
+  box-shadow: 0px 0.1rem 10px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 25px;
+  border: none;
+  margin: 0px 0px 15% 0px;
+}
+
+.card-list__restaurant__icone {
+  position: relative;
+  top: -70%;
+  left: 90%;
+  width: 23px;
+  height: 21px;
+  overflow: visible;
+  fill: none;
+  stroke: black;
+}
+
+.bar-info__icone i {
+  font-size: small;
+}
+
+.fa-handshake-angle {
+  margin: 0 2% 0 0;
+}
+
+.fa-utensils {
+  margin: 0 3% 0 0;
+}
+
 .bar-info {
-  background-color: black;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #353535;
+  padding: 7%;
+}
+.bar-info--margin {
+  margin: 0 0 0 3%;
 }
 .bar-info__icone {
   display: flex;
+  align-items: center;
   color: white;
-  margin: 5%;
-}
-.bar-info__icone i {
-  margin: 0px 5% 0px 0px;
-}
-.bar-info__text {
-  margin: 5%;
 }
 
 .logo-localisation--sizing {
@@ -79,23 +112,18 @@
 
 .reservation-tuto {
   background-color: #f6f6f6;
-  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .reservation-tuto__titre {
   text-align: center;
-  margin: 0px 0px 5% 0px;
+  width: 80%;
+  margin: 10% 0px 5% 0px;
 }
 .reservation-tuto__text {
   text-align: center;
-  margin: 0px 0px 15% 0px;
-}
-.reservation-tuto__btn {
-  height: 50px;
-  width: 80%;
-  background: linear-gradient(#ff79da -11.44%, #9356dc 123.93%);
-  box-shadow: 0px 0.1rem 10px 0px rgba(0, 0, 0, 0.2509803922);
-  border-radius: 25px;
-  border: none;
   margin: 0px 0px 15% 0px;
 }
 
@@ -175,12 +203,6 @@
 }
 .card-list__restaurant__text h3 {
   margin: 0px 0px 3% 0px;
-}
-.card-list__restaurant__text i {
-  font-size: x-large;
-  position: relative;
-  top: -70%;
-  left: 90%;
 }
 
 /*# sourceMappingURL=style.css.map */

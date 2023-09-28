@@ -1,18 +1,17 @@
 @use '../utils' as u;
 
-.bar-info {
-  background-color: black;
-  height: 100%;
 
-  &__icone {
-    display: flex;
-    color: white;
-    @include u.margin(5%);
-    & i {
-      @include u.margin(0px 5% 0px 0px);
-    }
+.bar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: u.$footer-background;
+  padding: 7%;
+  &--margin {
+    @include u.margin (0 0 0 3%);
   }
-  &__text {
-    @include u.margin(5%);
+  &__icone {
+@include u.display-align (center);
+color: white;
   }
 }

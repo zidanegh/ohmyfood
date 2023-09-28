@@ -2,15 +2,21 @@
   margin: $size;
 }
 
-@mixin display-flex-general ($change) {
+
+@mixin display-flex-general ($direction, $justify, $align) {
 display: flex;
-flex-direction: $change;
-justify-content: $change;
-align-items: $change;
+flex-direction: $direction;
+justify-content: $justify;
+align-items: $align;
 }
 
-@mixin display-justify ($change) {
-display: $change;
-justify-content: $change;
+@mixin display-justify ($justify) {
+display: flex;
+justify-content: $justify;
+}
+
+@mixin display-align ($align){
+  display: flex;
+  align-items: $align;
 }
 
