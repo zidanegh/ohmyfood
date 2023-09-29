@@ -36,26 +36,26 @@
 }
 
 .reservation-tuto__btn {
-  height: 50px;
-  width: 80%;
-  background: linear-gradient(#ff79da -11.44%, #9356dc 123.93%);
+  height: 7vh;
+  width: 65%;
+  background: linear-gradient(#ff79da 0%, #9356dc 100%);
   box-shadow: 0px 0.1rem 10px 0px rgba(0, 0, 0, 0.2509803922);
   border-radius: 25px;
   border: none;
   margin: 0px 0px 15% 0px;
+  transition: opacity 500ms ease-in-out, box-shadow 500ms ease-in-out;
+}
+.reservation-tuto__btn:hover {
+  box-shadow: 0px 0.1rem 15px 0px rgba(0, 0, 0, 0.2509803922);
+  opacity: 0.8;
 }
 
-.card-list__restaurant__icone {
-  position: relative;
-  top: -70%;
-  left: 90%;
-  width: 23px;
-  height: 21px;
-  overflow: visible;
-  fill: none;
-  stroke: black;
+@media (min-width: 769px) {
+  .reservation-tuto__btn {
+    width: 15%;
+    margin: 0px 0px 3% 0px;
+  }
 }
-
 .bar-info__icone i {
   font-size: small;
 }
@@ -68,6 +68,42 @@
   margin: 0 3% 0 0;
 }
 
+.card-list__restaurant__icon {
+  position: relative;
+  top: -70%;
+  left: 90%;
+  width: 23px;
+  height: 21px;
+  overflow: visible;
+  fill: none;
+  stroke: black;
+  transition: fill 1500ms;
+}
+.card-list__restaurant__icon:hover {
+  fill: url(#gradient);
+  stroke: none;
+}
+
+.seconde {
+  stop-color: #ff79da;
+}
+
+.primaire {
+  stop-color: #9356dc;
+}
+
+@media (min-width: 769px) {
+  .card-list__restaurant__icon {
+    bottom: 1vh;
+    left: 90%;
+  }
+  .fa-handshake-angle {
+    margin: 0 4% 0 0;
+  }
+  .fa-utensils {
+    margin: 0 5% 0 0;
+  }
+}
 .bar-info {
   display: flex;
   flex-direction: column;
@@ -83,7 +119,39 @@
   align-items: center;
   color: white;
 }
+.bar-info__title {
+  margin: 0 0 0 3%;
+}
 
+@media (min-width: 769px) {
+  .bar-info {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0px;
+    background-color: #353535;
+    padding: 4% 5% 2% 7%;
+  }
+  .bar-info__div {
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+  }
+  .bar-info--margin {
+    margin: 0 0 0 3%;
+  }
+  .bar-info__icone {
+    display: flex;
+    flex-direction: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 12em;
+    margin: 0 0 0 0;
+  }
+  .bar-info__title {
+    margin: 0 0 3% 3%;
+  }
+}
 .logo-localisation--sizing {
   display: flex;
   justify-content: center;
@@ -105,6 +173,20 @@
   font-size: medium;
 }
 
+@media (min-width: 769px) {
+  .logo-localisation__logo {
+    padding: 2.5%;
+  }
+  .logo-localisation__img {
+    width: 18%;
+  }
+  .logo-localisation__localisation {
+    padding: 1.5%;
+  }
+  .logo-localisation__text {
+    margin: 0 0 0 1%;
+  }
+}
 .link-decor {
   text-decoration: none;
   color: inherit;
@@ -133,6 +215,9 @@
   align-items: flex-start;
   margin: 15% 5% 20% 5%;
 }
+.fonctionnement__list-tuto {
+  width: 100%;
+}
 .fonctionnement__border {
   display: flex;
   align-items: center;
@@ -143,6 +228,7 @@
   margin: 5% 0px 0px 0px;
   height: 3.5em;
   position: relative;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
 }
 .fonctionnement__border-content {
   display: flex;
@@ -203,6 +289,58 @@
 }
 .card-list__restaurant__text h3 {
   margin: 0px 0px 3% 0px;
+}
+
+@media (min-width: 769px) {
+  .reservation-tuto__titre {
+    font-size: 3em;
+    margin: 3% 0px 3% 0px;
+  }
+  .reservation-tuto__text {
+    margin: 0px 0px 3% 0px;
+  }
+  .fonctionnement {
+    margin: 5% 10% 3% 10%;
+  }
+  .fonctionnement__list-tuto {
+    display: flex;
+    gap: 2%;
+  }
+  .fonctionnement__border {
+    width: 29%;
+    margin: 1.5% 0 0 1.3%;
+    height: 4.5em;
+  }
+  .fonctionnement__border-content {
+    margin: 0px 0px 0px 10%;
+  }
+  .fonctionnement__border-content i {
+    margin: 0px 7% 0px 0px;
+  }
+  .card-list {
+    padding: 3% 10% 0 13%;
+    background-color: #f6f6f6;
+  }
+  .card-list H1 {
+    margin: 0px 0px 2% 0px;
+  }
+  .card-list__div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7%;
+  }
+  .card-list__restaurant {
+    width: 45%;
+  }
+  .card-list__restaurant__text {
+    display: flex;
+    flex-direction: column;
+    padding: 2% 5% 7% 5%;
+    height: 1.5em;
+  }
+  .card-list__restaurant__text h3 {
+    margin: 0 0 1.5% 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

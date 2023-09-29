@@ -1,17 +1,5 @@
 @use '../utils' as u;
 
-
-.card-list__restaurant__icone {
-  position: relative;
-  top: -70%;
-  left: 90%;
-  width: 23px; 
-  height: 21px ;
-  overflow: visible;
-  fill: none;
- stroke: black;
-}
-
 .bar-info__icone i{
 font-size: small;
 }
@@ -20,4 +8,39 @@ font-size: small;
 }
 .fa-utensils{
   @include u.margin(0 3% 0 0);
+}
+
+.card-list__restaurant__icon {
+  position: relative;
+  top: -70%;
+  left: 90%;
+  width: 23px; 
+  height: 21px ;
+  overflow: visible;
+  fill: none;
+  stroke: black;
+  transition: fill 1500ms;
+  &:hover {
+    fill: url(#gradient);
+    stroke: none;
+  }
+}
+.seconde{
+stop-color: u.$second-color;
+}
+.primaire{
+  stop-color: u.$primaire-color;
+}
+
+@media (min-width: 769px ) {
+  .card-list__restaurant__icon {
+bottom: 1vh;
+  left: 90%;
+}
+.fa-handshake-angle{
+  @include u.margin(0 4% 0 0);
+}
+.fa-utensils{
+  @include u.margin(0 5% 0 0);
+}
 }
