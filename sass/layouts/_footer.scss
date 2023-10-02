@@ -35,7 +35,7 @@ color: white;
       @include u.margin (0 0 0 3%);
     }
     &__icone {
-  @include u.display-flex-general (flex, center, center);
+  @include u.display-flex-general (row, center, center);
   color: white;
   width: 12em;
   @include u.margin (0 0 0 0);

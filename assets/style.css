@@ -35,6 +35,34 @@
   color: white;
 }
 
+.menu__title {
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  font-size: 1.7em;
+}
+
+.menu__soustritre {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: large;
+}
+
+.menu__card-list__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: large;
+}
+
+.menu__card-list__text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+.euro {
+  font-weight: 500;
+}
+
 .reservation-tuto__btn {
   height: 7vh;
   width: 65%;
@@ -104,6 +132,29 @@
     margin: 0 5% 0 0;
   }
 }
+.fa-arrow-left {
+  font-size: x-large;
+}
+
+.menu__restaurant__icon {
+  position: relative;
+  left: 12%;
+  width: 23px;
+  height: 21px;
+  overflow: visible;
+  fill: none;
+  stroke: black;
+  transition: fill 1500ms;
+}
+.menu__restaurant__icon:hover {
+  fill: url(#gradient);
+  stroke: none;
+}
+
+.menu__card-list__checkmark {
+  display: none;
+}
+
 .bar-info {
   display: flex;
   flex-direction: column;
@@ -141,7 +192,7 @@
   }
   .bar-info__icone {
     display: flex;
-    flex-direction: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     color: white;
@@ -157,9 +208,7 @@
   justify-content: center;
   padding: 5% 0px 5% 0px;
   width: 100%;
-}
-.logo-localisation__logo {
-  box-shadow: 0px 2px rgba(0, 0, 0, 0.1490196078);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
 }
 .logo-localisation__img {
   width: 48%;
@@ -187,6 +236,24 @@
     margin: 0 0 0 1%;
   }
 }
+/* partie pour les restaurants */
+.logo-arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+}
+.logo-arrow__arrow {
+  margin: 0 0 0 5%;
+}
+.logo-arrow__logo {
+  display: flex;
+  justify-content: center;
+  padding: 5% 0px 5% 0px;
+  width: 100%;
+}
+
 .link-decor {
   text-decoration: none;
   color: inherit;
@@ -341,6 +408,62 @@
   .card-list__restaurant__text h3 {
     margin: 0 0 1.5% 0;
   }
+}
+.images {
+  height: 20%;
+  width: 100%;
+}
+.images img {
+  height: 35vh;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.menu {
+  background-color: #f6f6f6;
+  position: relative;
+  top: 28vh;
+  padding: 10% 4%;
+  border-radius: 40px 40px 0 0;
+}
+.menu__title-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 10% 0;
+}
+.menu__sous_titre {
+  border-bottom: 3px solid #99e2d0;
+  width: 15%;
+  padding-bottom: 1%;
+  margin: 0 0 4% 0;
+}
+.menu__card-list {
+  margin: 0 0 10% 0;
+}
+.menu__card-list__entrees {
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
+  display: flex;
+  justify-content: space-between;
+  height: 6vh;
+  padding: 4%;
+  margin: 0 0 5% 0;
+}
+.menu__card-list__content {
+  width: 100%;
+}
+.menu__card-list__text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 3% 0 0 0;
+}
+.menu__btn {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */
