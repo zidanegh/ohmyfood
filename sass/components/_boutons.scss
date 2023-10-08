@@ -1,27 +1,37 @@
-@use '../utils' as u;
+@use "../utils" as u;
 
-.reservation-tuto{
-&__btn {
-               height: 7vh;
-               width: 65%;
-               background: linear-gradient(u.$second-color 0%, u.$primaire-color 100%);
-               box-shadow: 0px 0.1rem 10px 0px #00000040;
-               border-radius: 25px;
-               border: none;
-               @include u.margin(0px 0px 15% 0px);
-               transition: opacity 500ms ease-in-out, box-shadow 500ms ease-in-out ;
-               &:hover{ 
-                box-shadow: 0px 0.1rem 15px 0px #00000040;
-                opacity: 0.8;
-               }
-             }
+.reservation-tuto {
+  &__btn {
+    @include u.sizing(65%, 7vh);
+    background: linear-gradient(u.$second-color 0%, u.$primaire-color 100%);
+    box-shadow: u.$shadow;
+    border-radius: 25px;
+    border: none;
+    @include u.margin(0px 0px 15% 0px);
+    transition: opacity 500ms ease-in-out, box-shadow 500ms ease-in-out;
+    &:hover {
+      box-shadow: u.$shadow;
+      opacity: 0.8;
+    }
+  }
 }
 
-@media (min-width: 769px ) {
-  .reservation-tuto{
+@media (min-width: 769px) {
+  .reservation-tuto {
     &__btn {
       width: 15%;
       @include u.margin(0px 0px 3% 0px);
     }
+  }
 }
+
+@media (min-width: 2000px) {
+  .reservation-tuto {
+    &__btn {
+      width: 10%;
+      height: 4vh;
+      border-radius: 50px;
+      @include u.margin(0px 0px 2% 0px);
+    }
+  }
 }

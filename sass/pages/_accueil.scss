@@ -1,46 +1,41 @@
-@use '../utils' as u;
-
+@use "../utils" as u;
 
 .link-decor {
   text-decoration: none;
   color: inherit;
 }
-
+.align-text-center {
+  text-align: center;
+}
 .reservation-tuto {
   background-color: u.$content-background;
-  @include u.display-flex-general (column, center, center ) ;
+  @include u.display-flex-general(column, center, center);
   &__titre {
-    text-align: center;
     width: 80%;
     @include u.margin(10% 0px 5% 0px);
   }
   &__text {
-    text-align: center;
     @include u.margin(0px 0px 15% 0px);
   }
 }
 
 .fonctionnement {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  @include u.display-flex-general(column, none, flex-start);
   @include u.margin(15% 5% 20% 5%);
-  &__list-tuto{
-    width: 100%;
+  &__list-tuto {
+    width: u.$pourcent-max;
   }
   &__border {
-    display: flex;
-    align-items: center;
+    @include u.display-align(center);
+    @include u.sizing(u.$pourcent-max, 3.5em);
+    @include u.margin(5% 0px 0px 0px);
     border: 1px solid u.$content-background;
     background-color: u.$content-background;
     border-radius: 20px;
-    width: 100%;
-    @include u.margin(5% 0px 0px 0px);
-    height: 3.5em;
     position: relative;
-    box-shadow: 0px 4px 15px 0px #00000026;
+    box-shadow: u.$shadow;
     &-content {
-      display: flex;
+      @include u.display-align(center);
       width: 80%;
       @include u.margin(0px 0px 0px 10%);
       font-weight: 500;
@@ -54,16 +49,13 @@
       }
     }
     &-num {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include u.display-flex-general(row, center, center);
       position: absolute;
       left: -0.7em;
-      border: 1px solid #9356dc;
+      border: 1px solid u.$primaire-color;
       border-radius: 50%;
-      height: 20px;
-      width: 20px;
-      background-color: #9356dc;
+      @include u.sizing(20px, 20px);
+      background-color: u.$primaire-color;
       color: white;
     }
   }
@@ -76,9 +68,8 @@
     @include u.margin(0px 0px 5% 0px);
   }
   &__restaurant {
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 4px 15px 0px #0000001a;
+    @include u.display-flex-general(column, none, none);
+    box-shadow: u.$shadow;
     border-radius: 15px;
     @include u.margin(0px 0px 5% 0px);
     &__content {
@@ -87,12 +78,10 @@
     & img {
       border-radius: 15px 15px 0px 0px;
       object-fit: cover;
-      width: 100%;
-      height: 25vh;
+      @include u.sizing(u.$pourcent-max, 25vh);
     }
     &__text {
-      display: flex;
-      flex-direction: column;
+      @include u.display-flex-general(column, none, none);
       height: 3em;
       padding: 5%;
       & h3 {
@@ -102,7 +91,7 @@
   }
 }
 
-@media (min-width: 769px ) {
+@media (min-width: 769px) {
   .reservation-tuto {
     &__titre {
       font-size: 3em;
@@ -114,14 +103,13 @@
   }
   .fonctionnement {
     @include u.margin(5% 10% 3% 10%);
-    &__list-tuto{
-      display: flex;
+    &__list-tuto {
+      @include u.display-align(center);
       gap: 2%;
     }
     &__border {
-      width: 29%;
+      @include u.sizing(29%, 4.5em);
       @include u.margin(1.5% 0 0 1.3%);
-      height: 4.5em;
       &-content {
         @include u.margin(0px 0px 0px 10%);
         & i {
@@ -136,7 +124,7 @@
     & H1 {
       @include u.margin(0px 0px 2% 0px);
     }
-    &__div{
+    &__div {
       display: flex;
       flex-wrap: wrap;
       gap: 7%;
@@ -144,8 +132,7 @@
     &__restaurant {
       width: 45%;
       &__text {
-        display: flex;
-        flex-direction: column;
+        @include u.display-flex-general(column, none, none);
         padding: 2% 5% 7% 5%;
         height: 1.5em;
         & h3 {

@@ -1,12 +1,12 @@
-@use '../utils' as u;
+@use "../utils" as u;
 
-.bar-info__icone i{
-font-size: small;
+.bar-info__icone i {
+  font-size: small;
 }
-.fa-handshake-angle{
+.fa-handshake-angle {
   @include u.margin(0 2% 0 0);
 }
-.fa-utensils{
+.fa-utensils {
   @include u.margin(0 3% 0 0);
 }
 
@@ -14,46 +14,7 @@ font-size: small;
   position: relative;
   top: -70%;
   left: 90%;
-  width: 23px; 
-  height: 21px ;
-  overflow: visible;
-  fill: none;
-  stroke: black;
-  transition: fill 1500ms;
-  &:hover {
-    fill: url(#gradient);
-    stroke: none;
-  }
-}
-.seconde{
-stop-color: u.$second-color;
-}
-.primaire{
-  stop-color: u.$primaire-color;
-}
-
-@media (min-width: 769px ) {
-  .card-list__restaurant__icon {
-bottom: 1vh;
-  left: 90%;
-}
-.fa-handshake-angle{
-  @include u.margin(0 4% 0 0);
-}
-.fa-utensils{
-  @include u.margin(0 5% 0 0);
-}
-}
-
-.fa-arrow-left{
-  font-size: x-large;
-  
-}
-
-.menu__restaurant__icon {
-  position: relative;
- left: 12%;
-  width: 23px; 
+  width: 23px;
   height: 21px;
   overflow: visible;
   fill: none;
@@ -64,6 +25,56 @@ bottom: 1vh;
     stroke: none;
   }
 }
-.menu__card-list__checkmark{
+
+@media (min-width: 769px) {
+  .card-list__restaurant__icon {
+    bottom: 1vh;
+    left: 90%;
+  }
+  .fa-handshake-angle {
+    @include u.margin(0 4% 0 0);
+  }
+  .fa-utensils {
+    @include u.margin(0 5% 0 0);
+  }
+}
+
+.fa-arrow-left {
+  font-size: x-large;
+}
+
+.menu__restaurant__icon {
+  position: relative;
+  left: 12%;
+  width: 23px;
+  height: 21px;
+  overflow: visible;
+  fill: white;
+  stroke: black;
+  transition-property: all;
+  transition-duration: 500ms;
+  &:hover {
+    fill: url(#gradient);
+    stroke: none;
+  }
+}
+.menu__card-list__checkmark {
   display: none;
+  border-radius: 0 15px 15px 0;
+  margin: -5% -5% -5% 0;
+  width: 25%;
+  background-color: antiquewhite;
+}
+
+.menu__card-list__text:hover + .menu__card-list__checkmark {
+  display: block;
+  @include u.display-flex-general(row, center, center);
+  & i {
+    display: inline-block;
+  }
+  background-color: u.$third-color;
+}
+.menu__card-list__text:hover + p,
+.menu__card-list__text:hover + h2 {
+  width: 50%;
 }
