@@ -1,3 +1,5 @@
+@use "./variable.scss" as u;
+
 @mixin margin($size) {
   margin: $size;
 }
@@ -21,4 +23,23 @@
 @mixin sizing($width, $height) {
   width: $width;
   height: $height;
+}
+
+@mixin rect-nouveau($top, $left) {
+  background-color: u.$third-color;
+  color: #008766;
+  border-radius: 2px;
+  position: relative;
+  top: $top;
+  left: $left;
+}
+@mixin desktop {
+  @media (min-width: 1000) {
+    @content;
+  }
+}
+
+@mixin font-sizing($weight, $size) {
+  font-weight: $weight;
+  font-size: $size;
 }

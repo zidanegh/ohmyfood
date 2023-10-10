@@ -3,10 +3,10 @@
 }
 
 .bar-info__title {
-  font-family: "Shrikhand", cursive;
   font-weight: 300;
-  color: white;
   font-size: large;
+  font-family: "Shrikhand", cursive;
+  color: white;
 }
 
 .title__card {
@@ -15,8 +15,8 @@
 }
 
 .text__card {
-  font-size: medium;
   font-weight: 300;
+  font-size: medium;
 }
 
 .title__accueil {
@@ -42,19 +42,16 @@
 }
 
 .menu__soustritre {
-  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: large;
 }
 
 .menu__card-list__title {
-  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: large;
 }
 
 .menu__card-list__text {
-  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 0.9em;
 }
@@ -87,6 +84,10 @@
     width: 15%;
     margin: 0px 0px 3% 0px;
   }
+  .menu__btn--size {
+    width: 30%;
+    border-radius: 50px;
+  }
 }
 @media (min-width: 2000px) {
   .reservation-tuto__btn {
@@ -108,52 +109,45 @@
   margin: 0 3% 0 0;
 }
 
-.card-list__restaurant__icon {
+.fa-heart {
   position: relative;
-  top: -70%;
-  left: 90%;
+  left: 15%;
   width: 23px;
   height: 21px;
-  overflow: visible;
-  fill: none;
-  stroke: black;
-  transition: fill 1500ms;
-}
-.card-list__restaurant__icon:hover {
-  fill: url(#gradient);
-  stroke: none;
+  background-color: linear-gradient(#ff79da 0%, #9356dc 100%);
 }
 
-@media (min-width: 769px) {
-  .card-list__restaurant__icon {
-    bottom: 1vh;
-    left: 90%;
-  }
-  .fa-handshake-angle {
-    margin: 0 4% 0 0;
-  }
-  .fa-utensils {
-    margin: 0 5% 0 0;
-  }
+.card-list__restaurant__heart {
+  position: relative;
+  right: -41%;
+  width: 23px;
+  height: 21px;
+  stroke: black;
+  transition: all 500ms ease-in-out;
 }
+
+path {
+  fill-opacity: 0.1;
+  fill: white;
+  stroke: black;
+}
+
+path:hover {
+  transition: all 500ms;
+  fill: url(#gradient);
+  fill-opacity: 1;
+  stroke: url(#gradient);
+}
+
 .fa-arrow-left {
   font-size: x-large;
 }
 
-.menu__restaurant__icon {
+.menu__heart {
   position: relative;
-  left: 12%;
+  left: 10%;
   width: 23px;
   height: 21px;
-  overflow: visible;
-  fill: white;
-  stroke: black;
-  transition-property: all;
-  transition-duration: 500ms;
-}
-.menu__restaurant__icon:hover {
-  fill: url(#gradient);
-  stroke: none;
 }
 
 .menu__card-list__checkmark {
@@ -181,6 +175,23 @@
   width: 50%;
 }
 
+@media (min-width: 769px) {
+  .card-list__restaurant__heart {
+    right: -20%;
+  }
+  .fa-handshake-angle {
+    margin: 0 4% 0 0;
+  }
+  .fa-utensils {
+    margin: 0 5% 0 0;
+  }
+  .menu__heart {
+    position: relative;
+    left: 10%;
+    width: 23px;
+    height: 21px;
+  }
+}
 .bar-info {
   display: flex;
   flex-direction: column;
@@ -189,7 +200,7 @@
   padding: 7%;
 }
 .bar-info--margin {
-  margin: 0 0 0 3%;
+  margin: 0 0 2% 2%;
 }
 .bar-info__icone {
   display: flex;
@@ -204,17 +215,20 @@
   .bar-info {
     display: flex;
     flex-direction: row-reverse;
-    gap: 0px;
+    gap: 6px;
     background-color: #353535;
     padding: 4% 5% 2% 7%;
   }
+  .bar-info__title {
+    margin: 0 0 0 5%;
+    padding-bottom: 0.5%;
+  }
   .bar-info__div {
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     width: 70%;
-  }
-  .bar-info--margin {
-    margin: 0 0 0 3%;
   }
   .bar-info__icone {
     display: flex;
@@ -222,11 +236,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    width: 12em;
-    margin: 0 0 0 0;
-  }
-  .bar-info__title {
-    margin: 0 0 3% 3%;
+    width: 11.6em;
   }
 }
 .logo-localisation--sizing {
@@ -248,21 +258,6 @@
   font-size: medium;
 }
 
-@media (min-width: 769px) {
-  .logo-localisation__logo {
-    padding: 2.5%;
-  }
-  .logo-localisation__img {
-    width: 18%;
-  }
-  .logo-localisation__localisation {
-    padding: 1.5%;
-  }
-  .logo-localisation__text {
-    margin: 0 0 0 1%;
-  }
-}
-/* partie pour les restaurants */
 .logo-arrow {
   display: flex;
   flex-direction: row;
@@ -280,6 +275,30 @@
   width: 100%;
 }
 
+@media (min-width: 769px) {
+  .logo-localisation__logo {
+    padding: 2.5%;
+  }
+  .logo-localisation__img {
+    width: 18%;
+  }
+  .logo-localisation__localisation {
+    padding: 1.5%;
+  }
+  .logo-localisation__text {
+    margin: 0 0 0 1%;
+  }
+  .logo-arrow__arrow {
+    margin: 0 0 0 1.5%;
+  }
+  .logo-arrow__logo {
+    padding: 2% 0px 2% 0px;
+  }
+  .logo-arrow__logo img {
+    width: 12%;
+  }
+}
+/* partie pour les restaurants */
 .link-decor {
   text-decoration: none;
   color: inherit;
@@ -372,25 +391,47 @@
   border-radius: 15px;
   margin: 0px 0px 5% 0px;
 }
-.card-list__restaurant__content {
-  height: auto;
+.card-list__restaurant__ecrit {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-list__restaurant__rectangle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 7em;
+  height: 1.3em;
+  background-color: #99e2d0;
+  color: #008766;
+  border-radius: 2px;
+  position: relative;
+  top: -9em;
+  left: -0.3em;
+  padding: 1.5%;
+}
+.card-list__restaurant .--hide {
+  visibility: hidden;
 }
 .card-list__restaurant img {
   border-radius: 15px 15px 0px 0px;
   object-fit: cover;
   width: 100%;
-  height: 25vh;
+  height: 20vh;
 }
 .card-list__restaurant__text {
   display: flex;
-  flex-direction: column;
-  justify-content: none;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: none;
-  height: 3em;
-  padding: 5%;
+  height: 3.5em;
+  padding: 0 5% 5% 5%;
 }
 .card-list__restaurant__text h3 {
-  margin: 0px 0px 3% 0px;
+  margin: 0px 0px 2.5% 0px;
 }
 
 @media (min-width: 769px) {
@@ -402,12 +443,15 @@
     margin: 0px 0px 3% 0px;
   }
   .fonctionnement {
-    margin: 5% 10% 3% 10%;
+    margin: 5% 13% 4% 13%;
   }
   .fonctionnement__list-tuto {
     display: flex;
     align-items: center;
-    gap: 2%;
+    gap: 2.5%;
+  }
+  .fonctionnement__titre {
+    margin: 0 0 1.5% 0;
   }
   .fonctionnement__border {
     width: 29%;
@@ -425,7 +469,7 @@
     background-color: #f6f6f6;
   }
   .card-list H1 {
-    margin: 0px 0px 2% 0px;
+    margin: 0px 0px 3.5% 0px;
   }
   .card-list__div {
     display: flex;
@@ -435,16 +479,30 @@
   .card-list__restaurant {
     width: 45%;
   }
+  .card-list__restaurant__rectangle {
+    width: 5.5em;
+    height: 1em;
+    background-color: #99e2d0;
+    color: #008766;
+    border-radius: 2px;
+    position: relative;
+    top: -10em;
+    left: 0em;
+  }
+  .card-list__restaurant .--hide {
+    margin: 0px 0px 3% 0px;
+    visibility: hidden;
+  }
   .card-list__restaurant__text {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: none;
     align-items: none;
     padding: 2% 5% 7% 5%;
     height: 1.5em;
   }
   .card-list__restaurant__text h3 {
-    margin: 0 0 1.5% 0;
+    margin: 10% 0 1.5% 0;
   }
 }
 .images {
@@ -462,8 +520,9 @@
   background-color: #f6f6f6;
   position: relative;
   top: 28vh;
-  padding: 10% 4%;
+  padding: 10% 4% 3% 4%;
   border-radius: 40px 40px 0 0;
+  margin-bottom: 59%;
 }
 .menu__title-icon {
   display: flex;
@@ -482,7 +541,6 @@
   margin: 0 0 10% 0;
 }
 .menu__card-list__content {
-  display: flex;
   border-radius: 15px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   display: flex;
@@ -521,6 +579,51 @@
 .menu__btn {
   display: flex;
   justify-content: center;
+}
+
+@media (min-width: 769px) {
+  .images {
+    width: 100%;
+    height: 10%;
+  }
+  .images img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    position: absolute;
+  }
+  .menu {
+    margin: 0 15% 0 15%;
+    top: 65vh;
+    padding: 5% 15% 3% 15%;
+    margin-bottom: 59%;
+  }
+  .menu__title-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu__sous_titre {
+    width: 6.5%;
+  }
+  .menu__card-list__content {
+    padding: 2%;
+    margin: 0 0 3% 0;
+  }
+  .menu__card-list__description {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu__card-list__description p {
+    margin: 1.8% 0 0 0;
+  }
+  .menu__card-list__description .euro {
+    margin-right: 0%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,54 +1,44 @@
+@use "../utils" as u;
 .body {
   font-family: "Roboto", sans-serif;
 }
 
+//certaine partie : font-family: "Shrikhand", cursive;
+
 .bar-info__title {
+  @include u.font-sizing(300, large);
   font-family: "Shrikhand", cursive;
-  font-weight: 300;
   color: white;
-  font-size: large;
 }
 .title__card {
-  font-weight: 700;
-  font-size: medium;
+  @include u.font-sizing(700, medium);
 }
 .text__card {
-  font-size: medium;
-  font-weight: 300;
+  @include u.font-sizing(300, medium);
 }
 .title__accueil {
-  font-weight: 700;
-  font-size: x-large;
+  @include u.font-sizing(700, x-large);
 }
 .content__accueil {
-  font-weight: 300;
-  font-size: large;
+  @include u.font-sizing(300, large);
 }
 .text-btn-fonctionnement-form {
-  font-weight: 500;
-  font-size: medium;
+  @include u.font-sizing(500, medium);
   color: white;
 }
 
 .menu__title {
   font-family: "Shrikhand", cursive;
-  font-weight: 400;
-  font-size: 1.7em;
+  @include u.font-sizing(400, 1.7em);
 }
 .menu__soustritre {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: large;
+  @include u.font-sizing(300, large);
 }
 .menu__card-list__title {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: large;
+  @include u.font-sizing(500, large);
 }
 .menu__card-list__text {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 0.9em;
+  @include u.font-sizing(300, 0.9em);
 }
 
 .euro {

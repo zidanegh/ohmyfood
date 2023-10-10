@@ -9,54 +9,42 @@
 .fa-utensils {
   @include u.margin(0 3% 0 0);
 }
-
-.card-list__restaurant__icon {
+.fa-heart {
   position: relative;
-  top: -70%;
-  left: 90%;
+  left: 15%;
   width: 23px;
   height: 21px;
-  overflow: visible;
-  fill: none;
-  stroke: black;
-  transition: fill 1500ms;
-  &:hover {
-    fill: url(#gradient);
-    stroke: none;
-  }
+  background-color: linear-gradient(u.$second-color 0%, u.$primaire-color 100%);
 }
 
-@media (min-width: 769px) {
-  .card-list__restaurant__icon {
-    bottom: 1vh;
-    left: 90%;
-  }
-  .fa-handshake-angle {
-    @include u.margin(0 4% 0 0);
-  }
-  .fa-utensils {
-    @include u.margin(0 5% 0 0);
-  }
+.card-list__restaurant__heart {
+  position: relative;
+  right: -41%;
+  width: 23px;
+  height: 21px;
+  stroke: black;
+  transition: all 500ms ease-in-out;
+}
+path {
+  fill-opacity: 0.1;
+  fill: white;
+  stroke: black;
+}
+path:hover {
+  transition: all 500ms;
+  fill: url(#gradient);
+  fill-opacity: 1;
+  stroke: url(#gradient);
 }
 
 .fa-arrow-left {
   font-size: x-large;
 }
-
-.menu__restaurant__icon {
+.menu__heart {
   position: relative;
-  left: 12%;
+  left: 10%;
   width: 23px;
   height: 21px;
-  overflow: visible;
-  fill: white;
-  stroke: black;
-  transition-property: all;
-  transition-duration: 500ms;
-  &:hover {
-    fill: url(#gradient);
-    stroke: none;
-  }
 }
 .menu__card-list__checkmark {
   display: none;
@@ -77,4 +65,22 @@
 .menu__card-list__text:hover + p,
 .menu__card-list__text:hover + h2 {
   width: 50%;
+}
+
+@media (min-width: 769px) {
+  .card-list__restaurant__heart {
+    right: -20%;
+  }
+  .fa-handshake-angle {
+    @include u.margin(0 4% 0 0);
+  }
+  .fa-utensils {
+    @include u.margin(0 5% 0 0);
+  }
+  .menu__heart {
+    position: relative;
+    left: 10%;
+    width: 23px;
+    height: 21px;
+  }
 }

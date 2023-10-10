@@ -72,20 +72,30 @@
     box-shadow: u.$shadow;
     border-radius: 15px;
     @include u.margin(0px 0px 5% 0px);
-    &__content {
-      height: auto;
+    &__ecrit {
+      width: 100%;
+      @include u.display-flex-general(row, space-between, center);
+    }
+    &__rectangle {
+      @include u.display-flex-general(row, center, center);
+      @include u.sizing(7em, 1.3em);
+      @include u.rect-nouveau(-9em, -0.3em);
+      padding: 1.5%;
+    }
+    .--hide {
+      visibility: hidden;
     }
     & img {
       border-radius: 15px 15px 0px 0px;
       object-fit: cover;
-      @include u.sizing(u.$pourcent-max, 25vh);
+      @include u.sizing(u.$pourcent-max, 20vh);
     }
     &__text {
-      @include u.display-flex-general(column, none, none);
-      height: 3em;
-      padding: 5%;
+      @include u.display-flex-general(row, space-around, none);
+      height: 3.5em;
+      padding: 0 5% 5% 5%;
       & h3 {
-        @include u.margin(0px 0px 3% 0px);
+        @include u.margin(0px 0px 2.5% 0px);
       }
     }
   }
@@ -102,10 +112,13 @@
     }
   }
   .fonctionnement {
-    @include u.margin(5% 10% 3% 10%);
+    @include u.margin(5% 13% 4% 13%);
     &__list-tuto {
       @include u.display-align(center);
-      gap: 2%;
+      gap: 2.5%;
+    }
+    &__titre {
+      @include u.margin(0 0 1.5% 0);
     }
     &__border {
       @include u.sizing(29%, 4.5em);
@@ -122,7 +135,7 @@
     padding: 3% 10% 0 13%;
     background-color: u.$content-background;
     & H1 {
-      @include u.margin(0px 0px 2% 0px);
+      @include u.margin(0px 0px 3.5% 0px);
     }
     &__div {
       display: flex;
@@ -131,12 +144,20 @@
     }
     &__restaurant {
       width: 45%;
+      &__rectangle {
+        @include u.sizing(5.5em, 1em);
+        @include u.rect-nouveau(-10em, 0em);
+      }
+      .--hide {
+        @include u.margin(0px 0px 3% 0px);
+        visibility: hidden;
+      }
       &__text {
-        @include u.display-flex-general(column, none, none);
+        @include u.display-flex-general(row, none, none);
         padding: 2% 5% 7% 5%;
         height: 1.5em;
         & h3 {
-          @include u.margin(0 0 1.5% 0);
+          @include u.margin(10% 0 1.5% 0);
         }
       }
     }
