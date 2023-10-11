@@ -22,19 +22,21 @@
   right: -41%;
   width: 23px;
   height: 21px;
-  stroke: black;
+  path {
+    fill-opacity: 0.1;
+    fill: white;
+    stroke: black;
+  }
   transition: all 500ms ease-in-out;
-}
-path {
-  fill-opacity: 0.1;
-  fill: white;
-  stroke: black;
-}
-path:hover {
-  transition: all 500ms;
-  fill: url(#gradient);
-  fill-opacity: 1;
-  stroke: url(#gradient);
+  path:hover {
+    transition: all 500ms;
+    fill: url(#gradient);
+    fill-opacity: 1;
+    stroke: url(#gradient);
+  }
+  path:not(:hover) {
+    transition: all 500ms;
+  }
 }
 
 .fa-arrow-left {
@@ -52,6 +54,7 @@ path:hover {
   margin: -5% -5% -5% 0;
   width: 25%;
   background-color: antiquewhite;
+  animation: checkmark 300ms ease-in-out;
 }
 
 .menu__card-list__text:hover + .menu__card-list__checkmark {
@@ -62,9 +65,23 @@ path:hover {
   }
   background-color: u.$third-color;
 }
-.menu__card-list__text:hover + p,
-.menu__card-list__text:hover + h2 {
-  width: 50%;
+
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.25);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media (min-width: 769px) {
@@ -82,5 +99,13 @@ path:hover {
     left: 10%;
     width: 23px;
     height: 21px;
+  }
+
+  .menu__card-list__checkmark {
+    display: none;
+    border-radius: 0 15px 15px 0;
+    margin: -2.1% -2.1% -2.1% 0;
+    width: 12%;
+    background-color: antiquewhite;
   }
 }

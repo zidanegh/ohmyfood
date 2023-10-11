@@ -1,21 +1,25 @@
 @use "../utils" as u;
 
+.container {
+  display: grid;
+}
+
 .images {
-  @include u.sizing(u.$pourcent-max, 20%);
+  grid-column: 1 / 1;
+  grid-row: 5 / 10;
   & img {
     @include u.sizing(u.$pourcent-max, 35vh);
     object-fit: cover;
-    position: absolute;
   }
 }
 
 .menu {
+  grid-column: 1 / 1;
+  grid-row: 9 / 15;
   background-color: u.$content-background;
   position: relative;
-  top: 28vh;
   padding: 10% 4% 3% 4%;
   border-radius: 40px 40px 0 0;
-  margin-bottom: 59%;
   &__title-icon {
     @include u.display-flex-general(row, flex-start, center);
     @include u.margin(0 0 10% 0);
@@ -66,21 +70,35 @@
     @include u.display-justify(center);
   }
 }
+.menu__card-list__text:hover .menu__card-list__title {
+  width: calc(89% - 20%);
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #99e2d0;
+}
+.menu__card-list__text:hover .menu__card-list__nom {
+  width: calc(89% - 20%);
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #99e2d0;
+}
 
 @media (min-width: 769px) {
   .images {
-    @include u.sizing(u.$pourcent-max, 10%);
+    grid-row: 10 / 18;
     & img {
-      @include u.sizing(u.$pourcent-max, 70%);
+      @include u.sizing(u.$pourcent-max, 33em);
       object-fit: cover;
-      position: absolute;
     }
   }
   .menu {
+    grid-row: 17 / 30;
     @include u.margin(0 15% 0 15%);
-    top: 65vh;
-    padding: 5% 15% 3% 15%;
-    margin-bottom: 59%;
+    padding: 3% 15% 3% 15%;
     &__title-icon {
       @include u.display-flex-general(row, center, center);
     }

@@ -1,6 +1,8 @@
 @use "../utils" as u;
 
 .bar-info {
+  grid-column: 1 / 1;
+  grid-row: 15 / 16;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -20,6 +22,7 @@
 
 @media (min-width: 769px) {
   .bar-info {
+    grid-row: 30 / 31;
     display: flex;
     flex-direction: row-reverse;
     gap: 6px;
