@@ -26,6 +26,9 @@
   @include u.font-sizing(500, medium);
   color: white;
 }
+.fonctionnement-content {
+  @include u.font-sizing(500, medium);
+}
 
 .menu__title {
   font-family: "Shrikhand", cursive;
@@ -45,6 +48,7 @@
   font-weight: 500;
 }
 
-.menu__card-list__checkmark i {
+.card__checkmark i {
   color: white;
+  font-size: x-large;
 }

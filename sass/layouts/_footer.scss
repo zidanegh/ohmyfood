@@ -2,7 +2,7 @@
 
 .bar-info {
   grid-column: 1 / 1;
-  grid-row: 15 / 16;
+  grid-row: 30 / 31;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -20,7 +20,7 @@
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 891px) {
   .bar-info {
     grid-row: 30 / 31;
     display: flex;
@@ -34,10 +34,11 @@
     }
     &__div {
       @include u.display-flex-general(row, flex-end, center);
-      width: 70%;
+      width: u.$pourcent-max;
     }
     &__icone {
       @include u.display-flex-general(row, center, center);
+      @include u.margin(0 0 2% 0.5%);
       color: white;
       width: 11.6em;
     }

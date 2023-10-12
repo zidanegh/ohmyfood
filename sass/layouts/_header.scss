@@ -33,8 +33,28 @@
     width: u.$pourcent-max;
   }
 }
-
-@media (min-width: 769px) {
+@media (min-width: 650px) and (max-width: 890px) {
+  .logo-localisation {
+    &__logo {
+      padding: 2.5%;
+    }
+    &__img {
+      width: 25%;
+    }
+    &__localisation {
+      padding: 1.5%;
+    }
+    &__text {
+      @include u.margin(0 0 0 1%);
+    }
+  }
+  .logo-arrow {
+    &__logo {
+      padding: 2% 0px 2% 0px;
+    }
+  }
+}
+@media (min-width: 891px) {
   .logo-localisation {
     &__logo {
       padding: 2.5%;
