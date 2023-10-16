@@ -84,10 +84,10 @@
     &__rectangle {
       @include u.display-flex-general(row, center, center);
       @include u.sizing(7em, 1.3em);
-      @include u.rect-nouveau(-155px, 0px);
+      @include u.rect-nouveau(-145px, 0px);
       padding: 1.5%;
     }
-    .--hide {
+    .hide {
       visibility: hidden;
     }
     & img {
@@ -103,6 +103,46 @@
         @include u.margin(0px 0px 2.5% 0px);
       }
     }
+  }
+}
+.loader-wrap {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  @include u.sizing(u.$pourcent-max, u.$pourcent-max);
+  background-color: white;
+  z-index: 1000;
+  animation: loader-wrap 2600ms forwards;
+}
+.loader-1 {
+  @include u.loader;
+  border-top-color: u.$third-color;
+  border-bottom-color: u.$third-color;
+  animation: loader-anim 2500ms forwards;
+}
+.loader-2 {
+  @include u.loader;
+  border-right-color: u.$primaire-color;
+  border-left-color: u.$primaire-color;
+  animation: loader-anim 2510ms forwards;
+}
+@keyframes loader-anim {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+@keyframes loader-wrap {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
   }
 }
 
@@ -147,6 +187,11 @@
       }
     }
   }
+  .loader-1,
+  .loader-2 {
+    top: 50%;
+    left: 40%;
+  }
 }
 
 @media (min-width: 891px) {
@@ -182,7 +227,6 @@
   }
   .card-list {
     padding: 3% 10% 0 13%;
-    background-color: u.$content-background;
     & H1 {
       @include u.margin(0px 0px 3.5% 0px);
     }
@@ -198,7 +242,7 @@
         @include u.rect-nouveau(-155px, -0.1em);
         padding: 2%;
       }
-      .--hide {
+      .hide {
         @include u.margin(0px 0px 3% 0px);
         visibility: hidden;
       }
@@ -211,5 +255,10 @@
         }
       }
     }
+  }
+  .loader-1,
+  .loader-2 {
+    top: 50%;
+    left: 40%;
   }
 }

@@ -44,17 +44,7 @@
       display: flex;
       flex-direction: column;
       width: u.$pourcent-max;
-      & p,
-      h2 {
-        width: 89%;
-        display: inline-block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        background-color: #99e2d0;
-      }
     }
-
     &__description {
       width: u.$pourcent-max;
       @include u.display-flex-general(row, space-between, center);
@@ -70,24 +60,52 @@
     @include u.display-justify(center);
   }
 }
-.menu__card-list__text:hover .menu__card-list__title {
-  width: calc(89% - 20%);
-  display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  background-color: #99e2d0;
-}
+
+.menu__card-list__text:hover .menu__card-list__title,
 .menu__card-list__text:hover .menu__card-list__nom {
-  width: calc(89% - 20%);
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  background-color: #99e2d0;
+}
+.menu__card-list__text:hover {
+  transition: width 500ms linear;
+  width: calc(100% - 22%);
 }
 
-@media (min-width: 769px) {
+.animation-entrée {
+  animation: fade-bottom 1s ease-in-out;
+  animation-delay: 0s;
+}
+.animation-plats {
+  animation: fade-bottom 1s ease-in-out;
+  animation-delay: 1s;
+}
+.animation-desserts {
+  animation: fade-bottom 1s ease-in-out;
+  animation-delay: 2s;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 890px) {
+  .menu__card-list__text:hover {
+    transition: width 500ms linear;
+    width: calc(100% - 10%);
+    margin-right: 2%;
+  }
+}
+
+@media (min-width: 891px) {
   .images {
     grid-row: 10 / 18;
     & img {
