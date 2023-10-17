@@ -11,6 +11,15 @@
     @include u.sizing(u.$pourcent-max, 35vh);
     object-fit: cover;
   }
+  @include u.desktop {
+    & {
+      grid-row: 10 / 18;
+      & img {
+        @include u.sizing(u.$pourcent-max, 33em);
+        object-fit: cover;
+      }
+    }
+  }
 }
 
 .menu {
@@ -51,13 +60,39 @@
       & p {
         @include u.margin(2.5% 0 0 0);
       }
-      .euro {
-        margin-right: 2%;
-      }
     }
   }
   &__btn {
     @include u.display-justify(center);
+  }
+  @include u.desktop {
+    & {
+      grid-row: 17 / 30;
+      @include u.margin(0 15% 0 15%);
+      padding: 3% 15% 3% 15%;
+      &__title-icon {
+        @include u.display-flex-general(row, center, center);
+      }
+      &__sous_titre {
+        width: 6.5%;
+      }
+      &__card-list {
+        &__content {
+          padding: 2%;
+          @include u.margin(0 0 3% 0);
+        }
+        &__description {
+          width: u.$pourcent-max;
+          @include u.display-flex-general(row, space-between, center);
+          & p {
+            @include u.margin(1.8% 0 0 0);
+          }
+          .euro {
+            margin-right: 0%;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -68,9 +103,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.menu__card-list__text:hover {
+.menu__card-list__content:hover .menu__card-list__text {
   transition: width 500ms linear;
-  width: calc(100% - 22%);
+  width: 78%;
+  @include u.tablette {
+    & {
+      width: 100%;
+    }
+  }
 }
 
 .animation-entrée {
@@ -94,50 +134,5 @@
   100% {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-
-@media (min-width: 650px) and (max-width: 890px) {
-  .menu__card-list__text:hover {
-    transition: width 500ms linear;
-    width: calc(100% - 10%);
-    margin-right: 2%;
-  }
-}
-
-@media (min-width: 891px) {
-  .images {
-    grid-row: 10 / 18;
-    & img {
-      @include u.sizing(u.$pourcent-max, 33em);
-      object-fit: cover;
-    }
-  }
-  .menu {
-    grid-row: 17 / 30;
-    @include u.margin(0 15% 0 15%);
-    padding: 3% 15% 3% 15%;
-    &__title-icon {
-      @include u.display-flex-general(row, center, center);
-    }
-    &__sous_titre {
-      width: 6.5%;
-    }
-    &__card-list {
-      &__content {
-        padding: 2%;
-        @include u.margin(0 0 3% 0);
-      }
-      &__description {
-        width: u.$pourcent-max;
-        @include u.display-flex-general(row, space-between, center);
-        & p {
-          @include u.margin(1.8% 0 0 0);
-        }
-        .euro {
-          margin-right: 0%;
-        }
-      }
-    }
   }
 }

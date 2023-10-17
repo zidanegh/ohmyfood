@@ -45,7 +45,12 @@
 }
 
 @mixin desktop {
-  @media (min-width: 1000) {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin tablette {
+  @media (min-width: 650px) {
     @content;
   }
 }

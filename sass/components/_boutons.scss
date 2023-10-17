@@ -14,40 +14,18 @@
       opacity: 0.8;
     }
   }
-}
-@media (min-width: 650px) and (max-width: 890px) {
-  .reservation-tuto {
-    &__btn {
-      width: 250px;
-      @include u.margin(0px 0px 3% 0px);
+  @include u.tablette {
+    & {
+      &__btn {
+        width: 250px;
+        @include u.margin(0px 0px 3% 0px);
+      }
     }
   }
+}
+@include u.tablette {
   .menu__btn--size {
     width: 30%;
     border-radius: 50px;
-  }
-}
-
-@media (min-width: 891px) {
-  .reservation-tuto {
-    &__btn {
-      width: 250px;
-      @include u.margin(0px 0px 3% 0px);
-    }
-  }
-  .menu__btn--size {
-    width: 30%;
-    border-radius: 50px;
-  }
-}
-
-@media (min-width: 2000px) {
-  .reservation-tuto {
-    &__btn {
-      width: 10%;
-      height: 4vh;
-      border-radius: 50px;
-      @include u.margin(0px 0px 2% 0px);
-    }
   }
 }

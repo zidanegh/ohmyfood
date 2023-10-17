@@ -18,6 +18,11 @@
   left: 85px;
   width: 23px;
   height: 21px;
+  @include u.desktop {
+    .card-list__restaurant__heart {
+      left: 65px;
+    }
+  }
 }
 .heart {
   path {
@@ -26,18 +31,18 @@
     stroke: black;
   }
   path:hover {
-    transition: fill-opacity 300ms ease-in-out;
+    transform-origin: top;
+    animation: heart 500ms ease-in-out;
     fill: url(#gradient);
     fill-opacity: 1;
-    stroke: url(#gradient);
-    stroke-opacity: 0.1;
   }
-  path:not(:hover) {
-    transition: all 300ms ease-in-out;
-    fill: url(#gradient);
-    fill-opacity: 0;
-    stroke: black;
-    stroke-opacity: 1;
+}
+@keyframes heart {
+  0% {
+    transform: fill scaleY(0.5);
+  }
+  100% {
+    transform: fill scaleY(1);
   }
 }
 
@@ -51,22 +56,31 @@
   height: 21px;
 }
 .engloblement-card__checkmark {
-  display: none;
   border-radius: 0 15px 15px 0;
   @include u.margin(-5% -5% -5% 0);
-  width: 25%;
   background-color: u.$third-color;
+  width: 20%;
+  @include u.tablette {
+    & {
+      @include u.margin(-4.35% -4.35% -4.35% 0);
+      width: 150%;
+    }
+  }
+  @include u.desktop {
+    & {
+      @include u.margin(-2.1% -2.1% -2.1% 0);
+      width: 20%;
+    }
+  }
 }
-
-.menu__card-list__text:hover + .engloblement-card__checkmark {
-  display: block;
+.menu__card-list__content:not(:hover) .engloblement-card__checkmark {
+  display: none;
   @include u.display-flex-general(row, center, center);
-  animation: checkmark 400ms linear;
+  animation: plus-checkmark 400ms ease-in-out forwards;
 }
-.menu__card-list__text:not(:hover) + .engloblement-card__checkmark {
-  display: block;
+.menu__card-list__content:hover .engloblement-card__checkmark {
   @include u.display-flex-general(row, center, center);
-  animation: plus-checkmark 400ms linear forwards;
+  animation: checkmark 400ms ease-in;
 }
 
 @keyframes checkmark {
@@ -74,35 +88,21 @@
     width: 0%;
   }
   to {
-    width: 25%;
+    width: 20%;
   }
 }
 @keyframes plus-checkmark {
   from {
     visibility: visible;
-    width: 25%;
+    width: 0%;
   }
   to {
     visibility: hidden;
-    width: 0%;
+    width: 20%;
   }
 }
 
-@media (min-width: 650px) and (max-width: 890px) {
-  .engloblement-card__checkmark {
-    @include u.margin(-4.35% -4.35% -4.35% 0);
-    width: 15%;
-  }
-  .menu__card-list__text:hover + .engloblement-card__checkmark {
-    display: block;
-    @include u.display-flex-general(row, center, center);
-    animation: checkmark 400ms linear;
-  }
-  .menu__card-list__text:not(:hover) + .engloblement-card__checkmark {
-    display: block;
-    animation: plus-checkmark 400ms linear;
-  }
-
+@include u.tablette {
   @keyframes checkmark {
     from {
       width: 0%;
@@ -113,7 +113,7 @@
   }
   @keyframes plus-checkmark {
     from {
-      visibility: visible;
+      visibility: hidden;
       width: 15%;
     }
     to {
@@ -122,40 +122,23 @@
     }
   }
 }
-
-@media (min-width: 891px) {
-  .card-list__restaurant__heart {
-    left: 65px;
+@include u.desktop {
+  @keyframes checkmark {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 20%;
+    }
   }
-  .engloblement-card__checkmark {
-    @include u.margin(-2.1% -2.1% -2.1% 0);
-    width: 20%;
-    .menu__card-list__text:hover + .engloblement-card__checkmark {
-      display: block;
-      animation: checkmark 400ms linear;
+  @keyframes plus-checkmark {
+    from {
+      visibility: visible;
+      width: 20%;
     }
-    .menu__card-list__text:not(:hover) + .engloblement-card__checkmark {
-      display: block;
-      animation: plus-checkmark 400ms linear;
-    }
-
-    @keyframes checkmark {
-      from {
-        width: 0%;
-      }
-      to {
-        width: 20%;
-      }
-    }
-    @keyframes plus-checkmark {
-      from {
-        visibility: visible;
-        width: 20%;
-      }
-      to {
-        visibility: hidden;
-        width: 0%;
-      }
+    to {
+      visibility: hidden;
+      width: 0%;
     }
   }
 }

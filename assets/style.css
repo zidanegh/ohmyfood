@@ -86,33 +86,17 @@
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
   opacity: 0.8;
 }
+@media (min-width: 650px) {
+  .reservation-tuto__btn {
+    width: 250px;
+    margin: 0px 0px 3% 0px;
+  }
+}
 
-@media (min-width: 650px) and (max-width: 890px) {
-  .reservation-tuto__btn {
-    width: 250px;
-    margin: 0px 0px 3% 0px;
-  }
+@media (min-width: 650px) {
   .menu__btn--size {
     width: 30%;
     border-radius: 50px;
-  }
-}
-@media (min-width: 891px) {
-  .reservation-tuto__btn {
-    width: 250px;
-    margin: 0px 0px 3% 0px;
-  }
-  .menu__btn--size {
-    width: 30%;
-    border-radius: 50px;
-  }
-}
-@media (min-width: 2000px) {
-  .reservation-tuto__btn {
-    width: 10%;
-    height: 4vh;
-    border-radius: 50px;
-    margin: 0px 0px 2% 0px;
   }
 }
 .bar-info__icone i {
@@ -137,6 +121,11 @@
   width: 23px;
   height: 21px;
 }
+@media (min-width: 1024px) {
+  .card-list__restaurant__heart .card-list__restaurant__heart {
+    left: 65px;
+  }
+}
 
 .heart path {
   fill-opacity: 0.1;
@@ -144,20 +133,20 @@
   stroke: black;
 }
 .heart path:hover {
-  transition: fill-opacity 300ms ease-in-out;
+  transform-origin: top;
+  animation: heart 500ms ease-in-out;
   fill: url(#gradient);
   fill-opacity: 1;
-  stroke: url(#gradient);
-  stroke-opacity: 0.1;
-}
-.heart path:not(:hover) {
-  transition: all 300ms ease-in-out;
-  fill: url(#gradient);
-  fill-opacity: 0;
-  stroke: black;
-  stroke-opacity: 1;
 }
 
+@keyframes heart {
+  0% {
+    transform: fill scaleY(0.5);
+  }
+  100% {
+    transform: fill scaleY(1);
+  }
+}
 .fa-arrow-left {
   font-size: x-large;
 }
@@ -170,29 +159,39 @@
 }
 
 .engloblement-card__checkmark {
-  display: none;
   border-radius: 0 15px 15px 0;
   margin: -5% -5% -5% 0;
-  width: 25%;
   background-color: #99e2d0;
+  width: 20%;
+}
+@media (min-width: 650px) {
+  .engloblement-card__checkmark {
+    margin: -4.35% -4.35% -4.35% 0;
+    width: 150%;
+  }
+}
+@media (min-width: 1024px) {
+  .engloblement-card__checkmark {
+    margin: -2.1% -2.1% -2.1% 0;
+    width: 20%;
+  }
 }
 
-.menu__card-list__text:hover + .engloblement-card__checkmark {
-  display: block;
+.menu__card-list__content:not(:hover) .engloblement-card__checkmark {
+  display: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  animation: checkmark 400ms linear;
+  animation: plus-checkmark 400ms ease-in-out forwards;
 }
 
-.menu__card-list__text:not(:hover) + .engloblement-card__checkmark {
-  display: block;
+.menu__card-list__content:hover .engloblement-card__checkmark {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  animation: plus-checkmark 400ms linear forwards;
+  animation: checkmark 400ms ease-in;
 }
 
 @keyframes checkmark {
@@ -200,36 +199,20 @@
     width: 0%;
   }
   to {
-    width: 25%;
+    width: 20%;
   }
 }
 @keyframes plus-checkmark {
   from {
     visibility: visible;
-    width: 25%;
+    width: 0%;
   }
   to {
     visibility: hidden;
-    width: 0%;
+    width: 20%;
   }
 }
-@media (min-width: 650px) and (max-width: 890px) {
-  .engloblement-card__checkmark {
-    margin: -4.35% -4.35% -4.35% 0;
-    width: 15%;
-  }
-  .menu__card-list__text:hover + .engloblement-card__checkmark {
-    display: block;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    animation: checkmark 400ms linear;
-  }
-  .menu__card-list__text:not(:hover) + .engloblement-card__checkmark {
-    display: block;
-    animation: plus-checkmark 400ms linear;
-  }
+@media (min-width: 650px) {
   @keyframes checkmark {
     from {
       width: 0%;
@@ -240,7 +223,7 @@
   }
   @keyframes plus-checkmark {
     from {
-      visibility: visible;
+      visibility: hidden;
       width: 15%;
     }
     to {
@@ -249,22 +232,7 @@
     }
   }
 }
-@media (min-width: 891px) {
-  .card-list__restaurant__heart {
-    left: 65px;
-  }
-  .engloblement-card__checkmark {
-    margin: -2.1% -2.1% -2.1% 0;
-    width: 20%;
-  }
-  .engloblement-card__checkmark .menu__card-list__text:hover + .engloblement-card__checkmark {
-    display: block;
-    animation: checkmark 400ms linear;
-  }
-  .engloblement-card__checkmark .menu__card-list__text:not(:hover) + .engloblement-card__checkmark {
-    display: block;
-    animation: plus-checkmark 400ms linear;
-  }
+@media (min-width: 1024px) {
   @keyframes checkmark {
     from {
       width: 0%;
@@ -304,14 +272,10 @@
 .bar-info__title {
   margin: 0 0 0 3%;
 }
-
-@media (min-width: 891px) {
+@media (min-width: 1024px) {
   .bar-info {
-    grid-row: 30/31;
-    display: flex;
     flex-direction: row-reverse;
     gap: 6px;
-    background-color: #353535;
     padding: 4% 5% 2% 7%;
   }
   .bar-info__title {
@@ -331,10 +295,10 @@
     justify-content: center;
     align-items: center;
     margin: 0 0 2% 0.5%;
-    color: white;
     width: 11.6em;
   }
 }
+
 .logo-localisation--sizing {
   display: flex;
   justify-content: center;
@@ -352,6 +316,34 @@
   margin: 0 0 0 4%;
   font-weight: 500;
   font-size: medium;
+}
+@media (min-width: 650px) {
+  .logo-localisation__logo {
+    padding: 2.5%;
+  }
+  .logo-localisation__img {
+    width: 25%;
+  }
+  .logo-localisation__localisation {
+    padding: 1.5%;
+  }
+  .logo-localisation__text {
+    margin: 0 0 0 1%;
+  }
+}
+@media (min-width: 1024px) {
+  .logo-localisation__logo {
+    padding: 2.5%;
+  }
+  .logo-localisation__img {
+    width: 18%;
+  }
+  .logo-localisation__localisation {
+    padding: 1.5%;
+  }
+  .logo-localisation__text {
+    margin: 0 0 0 1%;
+  }
 }
 
 .logo-arrow {
@@ -372,37 +364,12 @@
   padding: 5% 0px 5% 0px;
   width: 100%;
 }
-
-@media (min-width: 650px) and (max-width: 890px) {
-  .logo-localisation__logo {
-    padding: 2.5%;
-  }
-  .logo-localisation__img {
-    width: 25%;
-  }
-  .logo-localisation__localisation {
-    padding: 1.5%;
-  }
-  .logo-localisation__text {
-    margin: 0 0 0 1%;
-  }
+@media (min-width: 650px) {
   .logo-arrow__logo {
     padding: 2% 0px 2% 0px;
   }
 }
-@media (min-width: 891px) {
-  .logo-localisation__logo {
-    padding: 2.5%;
-  }
-  .logo-localisation__img {
-    width: 18%;
-  }
-  .logo-localisation__localisation {
-    padding: 1.5%;
-  }
-  .logo-localisation__text {
-    margin: 0 0 0 1%;
-  }
+@media (min-width: 1024px) {
   .logo-arrow__arrow {
     margin: 0 0 0 1.5%;
   }
@@ -413,7 +380,7 @@
     width: 12%;
   }
 }
-/* partie pour les restaurants */
+
 .link-decor {
   text-decoration: none;
   color: inherit;
@@ -436,6 +403,26 @@
 }
 .reservation-tuto__text {
   margin: 0px 0px 10% 0px;
+}
+@media (min-width: 650px) {
+  .reservation-tuto__titre {
+    width: 100%;
+    font-size: 2em;
+    margin: 7% 0px 5% 0px;
+  }
+  .reservation-tuto__text {
+    margin: 0px 0px 7% 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .reservation-tuto__titre {
+    width: 100%;
+    font-size: 3em;
+    margin: 3% 0px 3% 0px;
+  }
+  .reservation-tuto__text {
+    margin: 0px 0px 3% 0px;
+  }
 }
 
 .fonctionnement {
@@ -493,6 +480,50 @@
   height: 20px;
   background-color: #9356dc;
   color: white;
+}
+@media (min-width: 650px) {
+  .fonctionnement {
+    margin: 7% 5% 10% 5%;
+  }
+  .fonctionnement__border {
+    width: 75%;
+    height: 3.5em;
+    margin: 5% 0px 0px 5%;
+  }
+  .fonctionnement__border-content {
+    width: 100%;
+  }
+  .fonctionnement__border-content .fa-list,
+  .fonctionnement__border-content .fa-mobile-screen-button,
+  .fonctionnement__border-content .fa-store {
+    margin: 0px 15% 0px 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .fonctionnement {
+    margin: 5% 13% 4% 13%;
+  }
+  .fonctionnement__list-tuto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5%;
+  }
+  .fonctionnement__titre {
+    margin: 0 0 1.5% 0;
+  }
+  .fonctionnement__border {
+    width: 33%;
+    height: 4.5em;
+    margin: 1.5% 0 0 1.3%;
+  }
+  .fonctionnement__border-content {
+    margin: 0px 0px 0px 10%;
+  }
+  .fonctionnement__border-content i {
+    margin: 0px 7% 0px 0px;
+  }
 }
 
 .card-list {
@@ -553,88 +584,7 @@
 .card-list__restaurant__text h3 {
   margin: 0px 0px 2.5% 0px;
 }
-
-.loader-wrap {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  z-index: 1000;
-  animation: loader-wrap 2600ms forwards;
-}
-
-.loader-1 {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  border: 5px solid;
-  border-radius: 50%;
-  top: 35%;
-  left: 25%;
-  border-top-color: #99e2d0;
-  border-bottom-color: #99e2d0;
-  animation: loader-anim 2500ms forwards;
-}
-
-.loader-2 {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  border: 5px solid;
-  border-radius: 50%;
-  top: 35%;
-  left: 25%;
-  border-right-color: #9356dc;
-  border-left-color: #9356dc;
-  animation: loader-anim 2510ms forwards;
-}
-
-@keyframes loader-anim {
-  0% {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(360deg);
-    opacity: 0;
-  }
-}
-@keyframes loader-wrap {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-@media (min-width: 650px) and (max-width: 890px) {
-  .reservation-tuto__titre {
-    width: 100%;
-    font-size: 2em;
-    margin: 7% 0px 5% 0px;
-  }
-  .reservation-tuto__text {
-    margin: 0px 0px 7% 0px;
-  }
-  .fonctionnement {
-    margin: 7% 5% 10% 5%;
-  }
-  .fonctionnement__border {
-    width: 75%;
-    height: 3.5em;
-    margin: 5% 0px 0px 5%;
-  }
-  .fonctionnement__border-content {
-    width: 100%;
-  }
-  .fonctionnement__border-content .fa-list,
-  .fonctionnement__border-content .fa-mobile-screen-button,
-  .fonctionnement__border-content .fa-store {
-    margin: 0px 15% 0px 0px;
-  }
+@media (min-width: 650px) {
   .card-list__restaurant__rectangle {
     width: 6.5em;
     height: 1em;
@@ -652,45 +602,8 @@
   .card-list__restaurant__text h3 {
     margin: 0px 0px 2.5% 0px;
   }
-  .loader-1,
-  .loader-2 {
-    top: 50%;
-    left: 40%;
-  }
 }
-@media (min-width: 891px) {
-  .reservation-tuto__titre {
-    width: 100%;
-    font-size: 3em;
-    margin: 3% 0px 3% 0px;
-  }
-  .reservation-tuto__text {
-    margin: 0px 0px 3% 0px;
-  }
-  .fonctionnement {
-    margin: 5% 13% 4% 13%;
-  }
-  .fonctionnement__list-tuto {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5%;
-  }
-  .fonctionnement__titre {
-    margin: 0 0 1.5% 0;
-  }
-  .fonctionnement__border {
-    width: 33%;
-    height: 4.5em;
-    margin: 1.5% 0 0 1.3%;
-  }
-  .fonctionnement__border-content {
-    margin: 0px 0px 0px 10%;
-  }
-  .fonctionnement__border-content i {
-    margin: 0px 7% 0px 0px;
-  }
+@media (min-width: 1024px) {
   .card-list {
     padding: 3% 10% 0 13%;
   }
@@ -731,10 +644,69 @@
   .card-list__restaurant__text h3 {
     margin: 10% 0 1.5% 0;
   }
+}
+
+.loader-wrap {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
+  animation: loader-wrap 2600ms forwards;
+}
+
+.loader-1 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border: 5px solid;
+  border-radius: 50%;
+  top: 35%;
+  left: 25%;
+  border-top-color: #99e2d0;
+  border-bottom-color: #99e2d0;
+  animation: loader-anim 2500ms forwards;
+}
+
+.loader-2 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border: 5px solid;
+  border-radius: 50%;
+  top: 35%;
+  left: 25%;
+  border-right-color: #9356dc;
+  border-left-color: #9356dc;
+  animation: loader-anim 2510ms forwards;
+}
+
+@media (min-width: 650px) {
   .loader-1,
   .loader-2 {
     top: 50%;
     left: 40%;
+  }
+}
+@keyframes loader-anim {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+@keyframes loader-wrap {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
   }
 }
 .container {
@@ -749,6 +721,16 @@
   width: 100%;
   height: 35vh;
   object-fit: cover;
+}
+@media (min-width: 1024px) {
+  .images {
+    grid-row: 10/18;
+  }
+  .images img {
+    width: 100%;
+    height: 33em;
+    object-fit: cover;
+  }
 }
 
 .menu {
@@ -799,68 +781,11 @@
 .menu__card-list__description p {
   margin: 2.5% 0 0 0;
 }
-.menu__card-list__description .euro {
-  margin-right: 2%;
-}
 .menu__btn {
   display: flex;
   justify-content: center;
 }
-
-.menu__card-list__text:hover .menu__card-list__title,
-.menu__card-list__text:hover .menu__card-list__nom {
-  display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.menu__card-list__text:hover {
-  transition: width 500ms linear;
-  width: 78%;
-}
-
-.animation-entrée {
-  animation: fade-bottom 1s ease-in-out;
-  animation-delay: 0s;
-}
-
-.animation-plats {
-  animation: fade-bottom 1s ease-in-out;
-  animation-delay: 1s;
-}
-
-.animation-desserts {
-  animation: fade-bottom 1s ease-in-out;
-  animation-delay: 2s;
-}
-
-@keyframes fade-bottom {
-  0% {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@media (min-width: 650px) and (max-width: 890px) {
-  .menu__card-list__text:hover {
-    transition: width 500ms linear;
-    width: 90%;
-    margin-right: 2%;
-  }
-}
-@media (min-width: 891px) {
-  .images {
-    grid-row: 10/18;
-  }
-  .images img {
-    width: 100%;
-    height: 33em;
-    object-fit: cover;
-  }
+@media (min-width: 1024px) {
   .menu {
     grid-row: 17/30;
     margin: 0 15% 0 15%;
@@ -891,6 +816,50 @@
   }
   .menu__card-list__description .euro {
     margin-right: 0%;
+  }
+}
+
+.menu__card-list__text:hover .menu__card-list__title,
+.menu__card-list__text:hover .menu__card-list__nom {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu__card-list__content:hover .menu__card-list__text {
+  transition: width 500ms linear;
+  width: 78%;
+}
+@media (min-width: 650px) {
+  .menu__card-list__content:hover .menu__card-list__text {
+    width: 100%;
+  }
+}
+
+.animation-entrée {
+  animation: fade-bottom 1s ease-in-out;
+  animation-delay: 0s;
+}
+
+.animation-plats {
+  animation: fade-bottom 1s ease-in-out;
+  animation-delay: 1s;
+}
+
+.animation-desserts {
+  animation: fade-bottom 1s ease-in-out;
+  animation-delay: 2s;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
