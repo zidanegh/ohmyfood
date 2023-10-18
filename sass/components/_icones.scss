@@ -13,37 +13,66 @@
   color: u.$primaire-color;
 }
 
+.heart-wrap {
+  display: grid;
+}
 .card-list__restaurant__heart {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
   position: relative;
-  left: 85px;
+  float: left;
+  fill: transparent;
+  stroke: black;
+  z-index: 10;
   width: 23px;
   height: 21px;
-  @include u.desktop {
-    .card-list__restaurant__heart {
-      left: 65px;
-    }
-  }
 }
-.heart {
+
+.heart-stroke {
   path {
-    fill-opacity: 0.1;
-    fill: white;
+    fill: transparent;
     stroke: black;
   }
-  path:hover {
-    transform-origin: top;
-    animation: heart 500ms ease-in-out;
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  position: relative;
+  float: left;
+  z-index: 9;
+  width: 23px;
+  height: 21px;
+}
+.heart {
+  &:hover > path {
+    animation: heart 800ms ease-out;
     fill: url(#gradient);
-    fill-opacity: 1;
+    stroke: url(#gradient);
   }
 }
 @keyframes heart {
   0% {
-    transform: fill scaleY(0.5);
+    transform: scaleY(0.2);
+  }
+  5% {
+    transform: scaleY(0.2);
+  }
+  10% {
+    transform: scaleY(0.4);
+  }
+  15% {
+    transform: scaleY(0.6);
+  }
+  25% {
+    transform: scaleY(0.7);
   }
   100% {
-    transform: fill scaleY(1);
+    transform: scaleY(1);
   }
+  //   from{
+  //     transform: scaleY(0);
+  //   }
+  //   to{
+  //   transform: scaleY(1);
+  //   }
 }
 
 .fa-arrow-left {
@@ -63,7 +92,7 @@
   @include u.tablette {
     & {
       @include u.margin(-4.35% -4.35% -4.35% 0);
-      width: 150%;
+      width: 15%;
     }
   }
   @include u.desktop {

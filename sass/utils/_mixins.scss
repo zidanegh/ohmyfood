@@ -34,16 +34,6 @@
   left: $left;
 }
 
-@mixin loader {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  border: 5px solid;
-  border-radius: 50%;
-  top: 35%;
-  left: 25%;
-}
-
 @mixin desktop {
   @media (min-width: 1024px) {
     @content;

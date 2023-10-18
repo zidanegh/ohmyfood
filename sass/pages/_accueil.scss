@@ -142,12 +142,15 @@
     @include u.margin(0px 0px 5% 0px);
     &__ecrit {
       width: 100%;
-      @include u.display-flex-general(row, space-between, center);
+      display: grid;
+      grid-template-columns: 90% 10%;
+      margin-top: 3%;
+      margin-right: -30%;
     }
     &__rectangle {
       @include u.display-flex-general(row, center, center);
-      @include u.sizing(7em, 1.3em);
-      @include u.rect-nouveau(-145px, 0px);
+      @include u.sizing(5em, 1.3em);
+      @include u.rect-nouveau(-9.5em, 1em);
       padding: 1.5%;
     }
     .hide {
@@ -170,9 +173,13 @@
   @include u.tablette {
     & {
       &__restaurant {
+        &__ecrit {
+          margin-top: 1%;
+          margin-right: -30%;
+        }
         &__rectangle {
-          @include u.sizing(6.5em, 1em);
-          @include u.rect-nouveau(-160px, 1em);
+          @include u.sizing(5.5em, 1em);
+          @include u.rect-nouveau(-160px, 1.5em);
           padding: 1%;
         }
         &__text {
@@ -197,9 +204,13 @@
       }
       &__restaurant {
         width: 45%;
+        &__ecrit {
+          margin-top: 0%;
+          margin-right: -30%;
+        }
         &__rectangle {
           @include u.sizing(5.5em, 1em);
-          @include u.rect-nouveau(-155px, -0.1em);
+          @include u.rect-nouveau(-160px, 1em);
           padding: 2%;
         }
         .hide {
@@ -211,12 +222,15 @@
           padding: 2% 5% 7% 5%;
           height: 1.5em;
           & h3 {
-            @include u.margin(10% 0 1.5% 0);
+            @include u.margin(0% 0 1.5% 0);
           }
         }
       }
     }
   }
+}
+.heart__wrap {
+  background-color: #7e7e7e;
 }
 .loader-wrap {
   position: fixed;
@@ -227,29 +241,45 @@
   z-index: 1000;
   animation: loader-wrap 2600ms forwards;
 }
-.loader-1 {
-  @include u.loader;
+.loader {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border: 5px solid;
+  border-radius: 50%;
+  top: 35%;
+  left: 25%;
   border-top-color: u.$third-color;
   border-bottom-color: u.$third-color;
-  animation: loader-anim 2500ms forwards;
-}
-.loader-2 {
-  @include u.loader;
   border-right-color: u.$primaire-color;
   border-left-color: u.$primaire-color;
-  animation: loader-anim 2510ms forwards;
+  animation: loader-anim 2500ms forwards;
 }
+
 @include u.tablette {
-  .loader-1,
-  .loader-2 {
-    top: 50%;
-    left: 40%;
+  .loader {
+    top: 35%;
+    left: 43%;
   }
 }
 @keyframes loader-anim {
   0% {
     transform: rotate(0deg);
+  }
+  80% {
     opacity: 1;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  95% {
+    opacity: 0.35;
+  }
+  99% {
+    opacity: 0.2;
   }
   100% {
     transform: rotate(360deg);
@@ -259,6 +289,21 @@
 @keyframes loader-wrap {
   0% {
     opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  95% {
+    opacity: 0.35;
+  }
+  99% {
+    opacity: 0.2;
   }
   100% {
     opacity: 0;

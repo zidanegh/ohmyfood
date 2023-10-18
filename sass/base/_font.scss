@@ -33,6 +33,9 @@
 .menu__title {
   font-family: "Shrikhand", cursive;
   @include u.font-sizing(400, 1.7em);
+  @include u.tablette {
+    @include u.margin(0 25px 0 0);
+  }
 }
 .menu__soustritre {
   @include u.font-sizing(300, large);
@@ -46,7 +49,6 @@
 
 .euro {
   font-weight: 500;
-  background-color: aliceblue;
 }
 
 .card__checkmark i {
