@@ -51,6 +51,16 @@
   font-weight: 500;
 }
 
+.bar-info__icone i {
+  font-size: small;
+}
+.fa-store {
+  color: u.$primaire-color;
+}
+.fa-arrow-left {
+  color: black;
+}
+
 .card__checkmark i {
   color: white;
   font-size: x-large;

@@ -44,7 +44,7 @@
 }
 
 .fonctionnement {
-  @include u.display-flex-general(column, none, flex-start);
+  @include u.display-flex-general(column, unset, flex-start);
   @include u.margin(14% 5% 14% 5%);
   &__list-tuto {
     width: u.$pourcent-max;
@@ -136,7 +136,7 @@
     @include u.margin(0px 0px 7% 0px);
   }
   &__restaurant {
-    @include u.display-flex-general(column, none, none);
+    @include u.display-flex-general(column, unset, unset);
     box-shadow: u.$shadow;
     border-radius: 15px;
     @include u.margin(0px 0px 5% 0px);
@@ -150,8 +150,13 @@
     &__rectangle {
       @include u.display-flex-general(row, center, center);
       @include u.sizing(5em, 1.3em);
-      @include u.rect-nouveau(-9.5em, 1em);
+      @include u.rect-nouveau(-9em, 0.5em);
       padding: 1.5%;
+      @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        & {
+          @include u.rect-nouveau(-8.5em, 0.5em);
+        }
+      }
     }
     .hide {
       visibility: hidden;
@@ -162,7 +167,7 @@
       @include u.sizing(u.$pourcent-max, 20vh);
     }
     &__text {
-      @include u.display-flex-general(row, space-around, none);
+      @include u.display-flex-general(row, space-around, unset);
       height: 3.5em;
       padding: 0 5% 5% 5%;
       & h3 {
@@ -181,6 +186,11 @@
           @include u.sizing(5.5em, 1em);
           @include u.rect-nouveau(-160px, 1.5em);
           padding: 1%;
+          @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            & {
+              @include u.rect-nouveau(-150px, 1.5em);
+            }
+          }
         }
         &__text {
           padding: 1.5% 5% 1.5% 5%;
@@ -209,16 +219,21 @@
           margin-right: -30%;
         }
         &__rectangle {
-          @include u.sizing(5.5em, 1em);
-          @include u.rect-nouveau(-160px, 1em);
+          @include u.sizing(5em, 1em);
+          @include u.rect-nouveau(-160px, 1.4em);
           padding: 2%;
+          @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            & {
+              @include u.rect-nouveau(-150px, 1.4em);
+            }
+          }
         }
         .hide {
           @include u.margin(0px 0px 3% 0px);
           visibility: hidden;
         }
         &__text {
-          @include u.display-flex-general(row, none, none);
+          @include u.display-flex-general(row, unset, unset);
           padding: 2% 5% 7% 5%;
           height: 1.5em;
           & h3 {
@@ -232,29 +247,29 @@
 .heart__wrap {
   background-color: #7e7e7e;
 }
-.loader-wrap {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  @include u.sizing(u.$pourcent-max, u.$pourcent-max);
-  background-color: white;
-  z-index: 1000;
-  animation: loader-wrap 2600ms forwards;
-}
-.loader {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  border: 5px solid;
-  border-radius: 50%;
-  top: 35%;
-  left: 25%;
-  border-top-color: u.$third-color;
-  border-bottom-color: u.$third-color;
-  border-right-color: u.$primaire-color;
-  border-left-color: u.$primaire-color;
-  animation: loader-anim 2500ms forwards;
-}
+// .loader-wrap {
+//   position: fixed;
+//   top: 0%;
+//   left: 0%;
+//   @include u.sizing(u.$pourcent-max, u.$pourcent-max);
+//   background-color: white;
+//   z-index: 1000;
+//   animation: loader-wrap 2600ms forwards;
+// }
+// .loader {
+//   width: 200px;
+//   height: 200px;
+//   position: absolute;
+//   border: 5px solid;
+//   border-radius: 50%;
+//   top: 35%;
+//   left: 25%;
+//   border-top-color: u.$third-color;
+//   border-bottom-color: u.$third-color;
+//   border-right-color: u.$primaire-color;
+//   border-left-color: u.$primaire-color;
+//   animation: loader-anim 2500ms forwards;
+// }
 
 @include u.tablette {
   .loader {
