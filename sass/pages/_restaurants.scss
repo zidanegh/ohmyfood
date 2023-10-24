@@ -46,6 +46,7 @@
   }
   &__card-list {
     @include u.margin(0 0 10% 0);
+    opacity: 0;
     &__content {
       border-radius: 15px;
       box-shadow: u.$shadow;
@@ -120,17 +121,20 @@
   }
 }
 
-.animation-entrée {
+.animation-entree {
   animation: fade-bottom 1s ease-in-out;
   animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
 .animation-plats {
   animation: fade-bottom 1s ease-in-out;
   animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 .animation-desserts {
   animation: fade-bottom 1s ease-in-out;
   animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fade-bottom {

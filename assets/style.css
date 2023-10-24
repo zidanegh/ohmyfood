@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .body {
   font-family: "Roboto", sans-serif;
 }
@@ -559,6 +558,7 @@
   flex-direction: column;
   justify-content: unset;
   align-items: unset;
+  position: relative;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   border-radius: 15px;
   margin: 0px 0px 5% 0px;
@@ -568,7 +568,6 @@
   display: grid;
   grid-template-columns: 90% 10%;
   margin-top: 3%;
-  margin-right: -30%;
 }
 .card-list__restaurant__rectangle {
   display: flex;
@@ -580,20 +579,10 @@
   background-color: #99e2d0;
   color: #008766;
   border-radius: 2px;
-  position: relative;
-  top: -9em;
-  left: 0.5em;
+  top: 15px;
+  right: 20px;
+  position: absolute;
   padding: 1.5%;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  .card-list__restaurant__rectangle {
-    background-color: #99e2d0;
-    color: #008766;
-    border-radius: 2px;
-    position: relative;
-    top: -8.5em;
-    left: 0.5em;
-  }
 }
 .card-list__restaurant .hide {
   visibility: hidden;
@@ -618,31 +607,12 @@
 @media (min-width: 650px) {
   .card-list__restaurant__ecrit {
     margin-top: 1%;
-    margin-right: -30%;
   }
   .card-list__restaurant__rectangle {
     width: 5.5em;
     height: 1em;
-    background-color: #99e2d0;
-    color: #008766;
-    border-radius: 2px;
-    position: relative;
-    top: -160px;
-    left: 1.5em;
-    padding: 1%;
+    padding: 0.5%;
   }
-}
-@media screen and (min-width: 650px) and (-webkit-min-device-pixel-ratio: 0) {
-  .card-list__restaurant__rectangle {
-    background-color: #99e2d0;
-    color: #008766;
-    border-radius: 2px;
-    position: relative;
-    top: -150px;
-    left: 1.5em;
-  }
-}
-@media (min-width: 650px) {
   .card-list__restaurant__text {
     padding: 1.5% 5% 1.5% 5%;
   }
@@ -667,31 +637,12 @@
   }
   .card-list__restaurant__ecrit {
     margin-top: 0%;
-    margin-right: -30%;
   }
   .card-list__restaurant__rectangle {
     width: 5em;
     height: 1em;
-    background-color: #99e2d0;
-    color: #008766;
-    border-radius: 2px;
-    position: relative;
-    top: -160px;
-    left: 1.4em;
     padding: 2%;
   }
-}
-@media screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 0) {
-  .card-list__restaurant__rectangle {
-    background-color: #99e2d0;
-    color: #008766;
-    border-radius: 2px;
-    position: relative;
-    top: -150px;
-    left: 1.4em;
-  }
-}
-@media (min-width: 1024px) {
   .card-list__restaurant .hide {
     margin: 0px 0px 3% 0px;
     visibility: hidden;
@@ -824,6 +775,7 @@
 }
 .menu__card-list {
   margin: 0 0 10% 0;
+  opacity: 0;
 }
 .menu__card-list__content {
   border-radius: 15px;
@@ -904,19 +856,22 @@
   }
 }
 
-.animation-entrée {
+.animation-entree {
   animation: fade-bottom 1s ease-in-out;
   animation-delay: 0s;
+  animation-fill-mode: forwards;
 }
 
 .animation-plats {
   animation: fade-bottom 1s ease-in-out;
   animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 
 .animation-desserts {
   animation: fade-bottom 1s ease-in-out;
   animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fade-bottom {
