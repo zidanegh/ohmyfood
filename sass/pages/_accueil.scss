@@ -156,7 +156,7 @@
       top: 15px;
       right: 20px;
       position: absolute;
-      padding: 1.5%;
+      padding: 1%;
     }
     .hide {
       visibility: hidden;
@@ -183,7 +183,6 @@
         }
         &__rectangle {
           @include u.sizing(5.5em, 1em);
-          padding: 0.5%;
         }
         &__text {
           padding: 1.5% 5% 1.5% 5%;
@@ -212,7 +211,7 @@
         }
         &__rectangle {
           @include u.sizing(5em, 1em);
-          padding: 2%;
+          padding: 1.5%;
         }
         .hide {
           @include u.margin(0px 0px 3% 0px);
