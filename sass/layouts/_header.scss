@@ -4,7 +4,6 @@
   &--sizing {
     @include u.display-justify(center);
     padding: 5% 0px 5% 0px;
-    width: u.$pourcent-max;
     box-shadow: 0px 2px 4px 0px #00000026;
   }
   &__img {

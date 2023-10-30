@@ -232,29 +232,29 @@
 .heart__wrap {
   background-color: #7e7e7e;
 }
-// .loader-wrap {
-//   position: fixed;
-//   top: 0%;
-//   left: 0%;
-//   @include u.sizing(u.$pourcent-max, u.$pourcent-max);
-//   background-color: white;
-//   z-index: 1000;
-//   animation: loader-wrap 2600ms forwards;
-// }
-// .loader {
-//   width: 200px;
-//   height: 200px;
-//   position: absolute;
-//   border: 5px solid;
-//   border-radius: 50%;
-//   top: 35%;
-//   left: 25%;
-//   border-top-color: u.$third-color;
-//   border-bottom-color: u.$third-color;
-//   border-right-color: u.$primaire-color;
-//   border-left-color: u.$primaire-color;
-//   animation: loader-anim 2500ms forwards;
-// }
+.loader-wrap {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  @include u.sizing(u.$pourcent-max, u.$pourcent-max);
+  background-color: white;
+  z-index: 1000;
+  animation: loader-wrap 2600ms forwards;
+}
+.loader {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border: 5px solid;
+  border-radius: 50%;
+  top: 35%;
+  left: 25%;
+  border-top-color: u.$third-color;
+  border-bottom-color: u.$third-color;
+  border-right-color: u.$primaire-color;
+  border-left-color: u.$primaire-color;
+  animation: loader-anim 2500ms forwards;
+}
 
 @include u.tablette {
   .loader {
