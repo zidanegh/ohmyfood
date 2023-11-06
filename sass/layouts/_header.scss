@@ -12,10 +12,8 @@
   &__localisation {
     background-color: #eaeaea;
   }
-  &__text {
-    @include u.margin(0 0 0 4%);
-    font-weight: 500;
-    font-size: medium;
+  &__form {
+    @include u.display-flex-general(row, center, center);
   }
   @include u.tablette {
     & {
@@ -27,9 +25,6 @@
       }
       &__localisation {
         padding: 1.5%;
-      }
-      &__text {
-        @include u.margin(0 0 0 1%);
       }
     }
   }
@@ -44,9 +39,24 @@
       &__localisation {
         padding: 1.5%;
       }
-      &__text {
-        @include u.margin(0 0 0 1%);
-      }
+    }
+  }
+}
+#logo-localisation__text {
+  @include u.margin(0 0 0 4%);
+  width: 110px;
+  font-weight: 500;
+  font-size: medium;
+  background: #eaeaea;
+  border: 0px;
+  @include u.desktop {
+    &__text {
+      @include u.margin(0 0 0 1%);
+    }
+  }
+  @include u.tablette {
+    &__text {
+      @include u.margin(0 0 0 1%);
     }
   }
 }

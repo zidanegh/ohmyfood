@@ -38,6 +38,7 @@
 .heart {
   &:hover > path {
     animation: heart 600ms ease;
+    transform-origin: bottom;
     fill: url(#gradient);
     stroke: url(#gradient);
   }

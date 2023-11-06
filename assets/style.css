@@ -154,6 +154,7 @@
 
 .heart:hover > path {
   animation: heart 600ms ease;
+  transform-origin: bottom;
   fill: url(#gradient);
   stroke: url(#gradient);
 }
@@ -331,10 +332,11 @@
 .logo-localisation__localisation {
   background-color: #eaeaea;
 }
-.logo-localisation__text {
-  margin: 0 0 0 4%;
-  font-weight: 500;
-  font-size: medium;
+.logo-localisation__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 650px) {
   .logo-localisation__logo {
@@ -345,9 +347,6 @@
   }
   .logo-localisation__localisation {
     padding: 1.5%;
-  }
-  .logo-localisation__text {
-    margin: 0 0 0 1%;
   }
 }
 @media (min-width: 1024px) {
@@ -360,7 +359,23 @@
   .logo-localisation__localisation {
     padding: 1.5%;
   }
-  .logo-localisation__text {
+}
+
+#logo-localisation__text {
+  margin: 0 0 0 4%;
+  width: 110px;
+  font-weight: 500;
+  font-size: medium;
+  background: #eaeaea;
+  border: 0px;
+}
+@media (min-width: 1024px) {
+  #logo-localisation__text__text {
+    margin: 0 0 0 1%;
+  }
+}
+@media (min-width: 650px) {
+  #logo-localisation__text__text {
     margin: 0 0 0 1%;
   }
 }
